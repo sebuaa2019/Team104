@@ -46,6 +46,13 @@
 #include <tf/transform_listener.h>
 #include <geometry_msgs/PoseStamped.h>
 
+#include <cstdlib>
+#include <string>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <algorithm>
+
 using namespace std;
 
 #define STATE_READY     0
@@ -89,9 +96,8 @@ static vector<string> arKeyword;
 void InitKeyword()
 {
     arKeyword.push_back("start");   //机器人开始启动的地点,最后要回去
-    arKeyword.push_back("water");
-    arKeyword.push_back("tea");
-    arKeyword.push_back("cola");
+    arKeyword.push_back("record");
+    arKeyword.push_back("Record");
 }
 
 // 从句子里找arKeyword里存在的关键词
@@ -209,9 +215,14 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
         int nLenOfKW = strlen(strKeyword.c_str());
         if(nLenOfKW > 0)
         {
+            FILE* python_exec = popen("python3 /home/robot/catkin_ws/src/wpb_home_apps/src/ImageRecognition/sdk_ImageRecognition.py", "r");
+            char keyword[1024]; //设置一个合适的长度，以存储每一行输出
+            fgets(keyword, sizeof(keyword), python_exec);
             // 发现物品（航点）关键词
-            AddNewWaypoint(strKeyword);
-            string strSpeak = strKeyword + " . OK. I have memoried. Next one , please"; 
+            string objectName(keyword);
+            AddNewWaypoint(objectName);
+            cout << objectName << endl;
+            string strSpeak = objectName + " . OK. I have memoried. Next one , please"; 
             Speak(strSpeak);
         }
 

@@ -9,20 +9,30 @@ def get_label(path='image.jpg'):
     bucket = 'BUCKET'
     client = Client(appid, secret_id, secret_key, bucket)
     client.use_http()
-    client.set_timeout(30)
+    client.set_timeout(100)
     
     res = client.tag_detect(CIFile(path))
     try:
         tags = res['tags']
     except KeyError:
-        print(res)
+        try:
+            res = client.tag_detect(CIFile(path))
+            tags = res['tags']
+        except KeyError:
+            print('ERROR')
+            
     labels = []
-    # for tag in tags:
-        # label = tag['tag_name']
-        # labels.append(label)
-        # print('{}'.format(label), end = '\t')
-    # return labels
-    print('test')
+    for tag in tags:
+        label = tag['tag_name']
+        labels.append(label)
+    
+    keywords = ['水果']
+    keywords_eng = ['fruit']
+    for i in range(len(keywords)):
+        if keywords[i] in labels:
+            print(keywords_eng[i])
+            return
+    print('Unexpected object.')
     
 
 if __name__ == '__main__':

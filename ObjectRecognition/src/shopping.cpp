@@ -98,6 +98,7 @@ void InitKeyword()
     arKeyword.push_back("start");   //机器人开始启动的地点,最后要回去
     arKeyword.push_back("record");
     arKeyword.push_back("Record");
+    arKeyword.push_back("fruit");
 }
 
 // 从句子里找arKeyword里存在的关键词
@@ -220,10 +221,17 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
             fgets(keyword, sizeof(keyword), python_exec);
             // 发现物品（航点）关键词
             string objectName(keyword);
-            AddNewWaypoint(objectName);
-            cout << objectName << endl;
-            string strSpeak = objectName + " . OK. I have memoried. Next one , please"; 
-            Speak(strSpeak);
+	        cout << "[[[" << objectName << "]]]" << endl;
+            if (objectName != "fruit")
+            {
+	            string strSpeak = "Unexpected object or error, try again, please"; 
+	            Speak(strSpeak);
+            } else
+            {
+				AddNewWaypoint(objectName);
+	            string strSpeak = objectName + " . OK. I have memoried. Next one , please"; 
+	            Speak(strSpeak);
+            }
         }
 
         // 停止跟随的指令

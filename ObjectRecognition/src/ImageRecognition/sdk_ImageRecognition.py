@@ -32,7 +32,7 @@ def get_label(path='image.jpg'):
         if keywords[i] in labels:
             print(keywords_eng[i])
             return
-    print('Unexpected object.')
+    print('Unexpected object')
     
 
 if __name__ == '__main__':

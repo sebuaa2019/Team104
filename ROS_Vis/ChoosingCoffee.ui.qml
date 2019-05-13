@@ -52,6 +52,7 @@ import QtQuick 2.4
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 import Coffee 1.0
+import QtQuick.Window 2.0
 
 Item {
     id: root
@@ -59,12 +60,19 @@ Item {
     width: Constants.width + Constants.leftSideBarWidth
     height: Constants.height
 
-
+    property alias keypressed: keypressed
     property alias brewButtonSelection: brewButtonSelection
     property bool selected: false
     property alias brewButton: brewButton
     property alias sideBar: sideBar
     property alias backButton: backButton
+
+    property alias r1Button: r1Button
+    property alias r2Button: r2Button
+    property alias buttonA: buttonA
+    property alias buttonB: buttonB
+    property alias buttonX: buttonX
+    property alias buttonY: buttonY
 
     property alias questionVisible: cup.questionVisible
 
@@ -91,11 +99,65 @@ Item {
         visible: false
         anchors.right: parent.right
 
-        Column {
-            spacing: 32
-            anchors.bottom: brewButton.top
-            anchors.bottomMargin: 100
-            anchors.horizontalCenter: parent.horizontalCenter
+        Text {
+            id: keypressed
+            text: qsTr("Press a navigation button")
+            anchors.centerIn: parent
+            focus: true
+        }
+
+        RowLayout {
+            id: rowLayout
+            width: 794
+            height: 252
+            spacing: 50
+            anchors.centerIn: parent
+            ButtonImage {
+                id: r1Button
+                source: "images/buttons/xboxControllerLeftShoulder.png"
+                active: gamepad1.buttonL1
+            }
+
+            ButtonImage {
+                id: r2Button
+                source: "images/buttons/xboxControllerRightShoulder.png"
+                active: gamepad1.buttonR1
+            }
+        }
+
+        Item {
+            id: element
+            width: 200
+            height: 200
+            anchors.centerIn: parent
+            ButtonImage {
+                id: buttonA
+                anchors.bottom: parent.bottom
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "images/buttons/xboxControllerButtonA.png"
+                active: gamepad1.buttonDown
+            }
+            ButtonImage {
+                id: buttonB
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                source: "images/buttons/xboxControllerButtonB.png"
+                active: gamepad1.buttonRight
+            }
+            ButtonImage {
+                id: buttonX
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                source: "images/buttons/xboxControllerButtonX.png"
+                active: gamepad1.buttonLeft
+            }
+            ButtonImage {
+                id: buttonY
+                anchors.top: parent.top
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "images/buttons/xboxControllerButtonY.png"
+                active: gamepad1.buttonUp
+            }
         }
 
         NavigationButton {
@@ -167,10 +229,47 @@ Item {
                 target: rightSideBar
                 visible: true
             }
+
+            PropertyChanges {
+                target: rowLayout
+                x: -200
+                y: -380
+                width: 500
+                height: 75
+                anchors.verticalCenterOffset: -221
+                anchors.horizontalCenterOffset: 0
+                spacing: 50
+            }
+
+            PropertyChanges {
+                target: r1Button
+                width: 150
+                height: 75
+            }
+
+            PropertyChanges {
+                target: r2Button
+                width: 150
+                height: 75
+            }
+
+            PropertyChanges {
+                target: element
+                x: -10
+                y: 0
+            }
+
+            PropertyChanges {
+                target: keypressed
+                color: "#000000"
+                font.pointSize: 18
+                anchors.horizontalCenterOffset: 0
+                anchors.verticalCenterOffset: -333
+            }
         }
     ]
 
-    CupForm {
+    Cup {
         id: cup
         anchors.right: rightSideBar.left
         anchors.left: sideBar.right

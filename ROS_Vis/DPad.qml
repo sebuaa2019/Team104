@@ -3,7 +3,7 @@
 ** Copyright (C) 2017 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
 **
-** This file is part of the examples of the Qt Toolkit.
+** This file is part of the examples of the Qt Gamepad module
 **
 ** $QT_BEGIN_LICENSE:BSD$
 ** Commercial License Usage
@@ -48,113 +48,63 @@
 **
 ****************************************************************************/
 
-import QtQuick 2.4
-import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.3
-import Coffee 1.0
+import QtQuick 2.0
+import QtGamepad 1.0
 
-Image {
-    id: root
-    source: "images/icons/coffees/cappucino.png"
-    signal clicked
+Item {
+    property Gamepad gamepad
 
-    property int duration: 250
-    property alias text: label.text
-    property alias color: label.color
-//! [0]
-    MouseArea {
+    width: dpadImage.sourceSize.width
+    height: dpadImage.sourceSize.height
+    Image {
+        id: dpadImage
         anchors.fill: parent
-        onClicked: root.clicked()
-        onPressed: {
-            glow.visible = true
-            animation1.start()
-            animation2.start()
-        }
+        source: "xboxControllerDPad.png"
     }
-//! [0]
 
     Rectangle {
-        id: glow
-        visible: false
-
-        width: 250
-        height: 250
-        color: "#00000000"
-        radius: 125
-        scale: 1.05
-        border.color: "#ffffff"
-    }
-
-    Label {
-        id: label
-        x: 292
-        y: 252
-        text: qsTr("Label")
+        id: upArea
+        visible: gamepad.buttonUp
+        color: "#3814abff"
+        radius: 5
+        anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
-        color: "#443224"
-        font.family: Constants.fontFamily
-        font.pixelSize: 28
+        width: parent.width * 0.3
+        height: parent.height * 0.3
+        anchors.topMargin: parent.height * 0.05
+    }
+    Rectangle {
+        id: downArea
+        visible: gamepad.buttonDown
+        color: "#3814abff"
+        radius: 5
+        width: parent.width * 0.3
+        height: parent.height * 0.3
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: parent.height * 0.05
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+    Rectangle {
+        id: leftArea
+        visible: gamepad.buttonLeft
+        color: "#3814abff"
+        radius: 5
+        width: parent.width * 0.3
+        height: parent.height * 0.3
+        anchors.left: parent.left
+        anchors.leftMargin: parent.width * 0.05
+        anchors.verticalCenter: parent.verticalCenter
     }
 
-    PropertyAnimation {
-        target: glow
-        id: animation1
-        duration: root.duration
-        loops: 1
-        from: 1.05
-        to: 1.2
-        property: "scale"
+    Rectangle {
+        id: rightArea
+        visible: gamepad.buttonRight
+        color: "#3814abff"
+        radius: 5
+        width: parent.width * 0.3
+        height: parent.height * 0.3
+        anchors.right: parent.right
+        anchors.rightMargin: parent.width * 0.05
+        anchors.verticalCenter: parent.verticalCenter
     }
-
-    ParallelAnimation {
-        id: animation2
-        SequentialAnimation {
-            PropertyAnimation {
-                target: glow
-                duration: root.duration
-                loops: 1
-                from: 0.2
-                to: 1.0
-                property: "opacity"
-            }
-            PropertyAnimation {
-                target: glow
-                duration: root.duration
-                loops: 1
-                from: 1.0
-                to: 0.0
-                property: "opacity"
-            }
-
-            PropertyAction {
-                target: glow
-                property: "visible"
-                value: false
-            }
-        }
-
-        SequentialAnimation {
-            PropertyAction {
-                target: glow
-                property: "border.width"
-                value: 20
-            }
-
-            PauseAnimation {
-                duration: 200
-            }
-
-            PropertyAnimation {
-                target: glow
-                duration: root.duration
-                loops: 1
-                from: 20
-                to: 10
-                property: "border.width"
-            }
-        }
-    }
-
-
-
 }

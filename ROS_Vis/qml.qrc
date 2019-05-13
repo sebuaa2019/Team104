@@ -30,12 +30,25 @@
         <file>BrewingForm.ui.qml</file>
         <file>ChoosingCoffee.ui.qml</file>
         <file>CoffeeButton.qml</file>
-        <file>CupForm.ui.qml</file>
         <file>EmptyCupForm.ui.qml</file>
         <file>NavigationButton.ui.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>SideBar.qml</file>
         <file>SideBarForm.ui.qml</file>
         <file>EmptyCup.qml</file>
+        <file>ButtonImage.qml</file>
+        <file>DPad.qml</file>
+        <file>images/buttons/xboxControllerButtonA.png</file>
+        <file>images/buttons/xboxControllerButtonB.png</file>
+        <file>images/buttons/xboxControllerButtonX.png</file>
+        <file>images/buttons/xboxControllerButtonY.png</file>
+        <file>images/buttons/xboxControllerDPad.png</file>
+        <file>images/buttons/xboxControllerLeftShoulder.png</file>
+        <file>images/buttons/xboxControllerRightShoulder.png</file>
+        <file>Data.qml</file>
+        <file>NewButton.qml</file>
+        <file>Cup.qml</file>
+        <file>images/qmlsurface-example.png</file>
+        <file>images/heightmap.png</file>
     </qresource>
 </RCC>

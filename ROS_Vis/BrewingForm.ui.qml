@@ -68,7 +68,7 @@ Item {
         color: Constants.backgroundColor
         anchors.fill: parent
 
-        CupForm {
+        Cup {
             id: cup
             x: 256
             y: 96
@@ -87,7 +87,7 @@ Item {
         id: brewLabel
 
         color: "#ffffff"
-        text: "Navigating"
+        text: "Navigating..."
         anchors.topMargin: Constants.defaultMargin
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter

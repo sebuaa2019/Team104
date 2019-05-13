@@ -3,7 +3,7 @@
 ** Copyright (C) 2017 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
 **
-** This file is part of the examples of the Qt Toolkit.
+** This file is part of the examples of the Qt Gamepad module
 **
 ** $QT_BEGIN_LICENSE:BSD$
 ** Commercial License Usage
@@ -48,113 +48,48 @@
 **
 ****************************************************************************/
 
-import QtQuick 2.4
-import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.3
-import Coffee 1.0
+import QtQuick 2.0
+//import QtGraphicalEffects 1.0
 
-Image {
+Item {
     id: root
-    source: "images/icons/coffees/cappucino.png"
+    width: buttonImage.sourceSize.width
+    height: buttonImage.sourceSize.height
     signal clicked
+    signal pressed
+    signal released
 
-    property int duration: 250
-    property alias text: label.text
-    property alias color: label.color
-//! [0]
-    MouseArea {
-        anchors.fill: parent
-        onClicked: root.clicked()
-        onPressed: {
-            glow.visible = true
-            animation1.start()
-            animation2.start()
+    property alias source: buttonImage.source
+    property bool active: false
+
+    //! [0]
+        MouseArea {
+            anchors.fill: parent
+            onClicked: root.clicked()
+            onPressed: root.pressed()
+            onReleased: root.released()
         }
+    //! [0]
+
+    Image {
+        id: buttonImage
+        smooth: true
+//        visible: !active
     }
-//! [0]
 
     Rectangle {
-        id: glow
-        visible: false
-
-        width: 250
-        height: 250
-        color: "#00000000"
-        radius: 125
-        scale: 1.05
-        border.color: "#ffffff"
+        anchors.fill: buttonImage
+        color: "#14abff"
+        opacity: 0.6
+        radius: 8
+        visible: active
     }
 
-    Label {
-        id: label
-        x: 292
-        y: 252
-        text: qsTr("Label")
-        anchors.horizontalCenter: parent.horizontalCenter
-        color: "#443224"
-        font.family: Constants.fontFamily
-        font.pixelSize: 28
-    }
-
-    PropertyAnimation {
-        target: glow
-        id: animation1
-        duration: root.duration
-        loops: 1
-        from: 1.05
-        to: 1.2
-        property: "scale"
-    }
-
-    ParallelAnimation {
-        id: animation2
-        SequentialAnimation {
-            PropertyAnimation {
-                target: glow
-                duration: root.duration
-                loops: 1
-                from: 0.2
-                to: 1.0
-                property: "opacity"
-            }
-            PropertyAnimation {
-                target: glow
-                duration: root.duration
-                loops: 1
-                from: 1.0
-                to: 0.0
-                property: "opacity"
-            }
-
-            PropertyAction {
-                target: glow
-                property: "visible"
-                value: false
-            }
-        }
-
-        SequentialAnimation {
-            PropertyAction {
-                target: glow
-                property: "border.width"
-                value: 20
-            }
-
-            PauseAnimation {
-                duration: 200
-            }
-
-            PropertyAnimation {
-                target: glow
-                duration: root.duration
-                loops: 1
-                from: 20
-                to: 10
-                property: "border.width"
-            }
-        }
-    }
-
-
-
+    // BrightnessContrast {
+    //     anchors.fill: buttonImage
+    //     source: buttonImage
+    //     brightness: 0.5
+    //     contrast: 0.5
+    //     visible: active
+    // }
 }

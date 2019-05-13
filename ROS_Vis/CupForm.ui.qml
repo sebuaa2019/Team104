@@ -49,15 +49,18 @@
 ****************************************************************************/
 
 import QtQuick 2.7
-import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 import Coffee 1.0
+import QtDataVisualization 1.0
+import "."
 
-Item {
+Rectangle {
     id: root
 
     width: 768
     height: 768
+    color: surfacePlot.theme.windowColor
+
     property alias questionVisible: question.visible
     property bool showLabels: true
     property alias coffeeLabel: cappuccinoLabel.text
@@ -66,67 +69,18 @@ Item {
     property real milkAmount: 4
     property real coffeeAmount: 4
 
+    Data {
+        id: surfaceData
+    }
+
     Rectangle {
-        id: rectangle
+        id: surfaceView
         color: "#443224"
-        anchors.fill: parent
-
-        Image {
-            id: background
-            x: 12
-            y: 170
-            source: "images/cup structure/cup elements/coffee_cup_back.png"
-        }
-
-        Item {
-            id: foam
-            x: 12
-            width: 457
-            anchors.topMargin: milk.anchors.topMargin - 40
-            anchors.bottom: background.bottom
-            anchors.top: background.top
-            clip: true
-            Image {
-                anchors.bottom: parent.bottom
-                source: "images/cup structure/liquids/liquid_foam.png"
-            }
-        }
-
-        Item {
-            id: milk
-            x: 12
-            width: 457
-            anchors.topMargin: 400 - coffee.height - root.milkAmount * 15 + 20
-            anchors.bottom: background.bottom
-            anchors.top: background.top
-            clip: true
-            Image {
-                source: "images/cup structure/liquids/liquid_milk.png"
-                anchors.bottom: parent.bottom
-            }
-        }
-
-        Item {
-            id: coffee
-            x: 12
-            width: 457
-            height: root.coffeeAmount * 40
-            anchors.bottomMargin: 0
-            anchors.bottom: background.bottom
-            clip: true
-
-            Image {
-                anchors.bottom: parent.bottom
-                source: "images/cup structure/liquids/liquid_coffee.png"
-            }
-        }
-
-        Image {
-            id: cupFront
-            x: 11
-            y: 170
-            source: "images/cup structure/cup elements/coffee_cup_front.png"
-        }
+        //anchors.fill: parent
+        width: root.width;
+        height: root.height;
+        anchors.top: root.top;
+        anchors.left: root.left;
 
         Text {
             id: cappuccinoLabel
@@ -143,48 +97,220 @@ Item {
             font.capitalization: Font.AllUppercase
         }
 
-        Item {
-            id: sugarItem
-            x: 181
-            y: 419
-            width: 119
-            height: 111
-            rotation: -45
-
-            Rectangle {
-                x: 21
-                y: 8
-                width: 48
-                height: 48
-                color: "#ffffff"
-                opacity: root.sugarAmount / 10
-            }
-
-            Rectangle {
-                x: 74
-                y: 40
-                width: 32
-                height: 32
-                color: "#ffffff"
-                visible: root.sugarAmount > 5
-                opacity: root.sugarAmount / 30
-            }
-
-            Rectangle {
-                x: 45
-                y: 62
-                width: 24
-                height: 24
-                color: "#ffffff"
-                opacity: root.sugarAmount / 25
-            }
+    //! [0]
+        ColorGradient {
+            id: surfaceGradient
+            ColorGradientStop { position: 0.0; color: "darkslategray" }
+            ColorGradientStop { id: middleGradient; position: 0.25; color: "peru" }
+            ColorGradientStop { position: 1.0; color: "red" }
         }
+    //! [0]
+
+        Surface3D {
+            id: surfacePlot
+            width: surfaceView.width
+            height: surfaceView.height
+        //! [7]
+            theme: Theme3D {
+                type: Theme3D.ThemeStoneMoss
+                font.family: "STCaiyun"
+                font.pointSize: 35
+                colorStyle: Theme3D.ColorStyleRangeGradient
+                baseGradients: [surfaceGradient]
+            }
+        //! [7]
+
+            shadowQuality: AbstractGraph3D.ShadowQualityMedium
+            selectionMode: AbstractGraph3D.SelectionSlice | AbstractGraph3D.SelectionItemAndRow
+            scene.activeCamera.cameraPreset: Camera3D.CameraPresetIsometricLeft
+            axisY.min: 0.0
+            axisY.max: 500.0
+            axisX.segmentCount: 10
+            axisX.subSegmentCount: 2
+            axisX.labelFormat: "%i"
+            axisZ.segmentCount: 10
+            axisZ.subSegmentCount: 2
+            axisZ.labelFormat: "%i"
+            axisY.segmentCount: 5
+            axisY.subSegmentCount: 2
+            axisY.labelFormat: "%i"
+            axisY.title: "Height"
+            axisX.title: "Latitude"
+            axisZ.title: "Longitude"
+        }
+
+        //! [5]
+            Surface3DSeries {
+                id: surfaceSeries
+                flatShadingEnabled: false
+                drawMode: Surface3DSeries.DrawSurface
+
+                ItemModelSurfaceDataProxy {
+                //! [5]
+                //! [6]
+                    itemModel: surfaceData.model
+                    rowRole: "longitude"
+                    columnRole: "latitude"
+                    yPosRole: "height"
+                }
+                //! [6]
+                onDrawModeChanged: checkState()
+            }
+       //! [4]
+            Surface3DSeries {
+                            id: heightSeries
+                            flatShadingEnabled: false
+                            drawMode: Surface3DSeries.DrawSurface
+                            visible: false
+
+                            HeightMapSurfaceDataProxy {
+                                heightMapFile: ":/heightmaps/image"
+                                // We don't want the default data values set by heightmap proxy.
+                                minZValue: 30
+                                maxZValue: 60
+                                minXValue: 67
+                                maxXValue: 97
+                            }
+
+                            onDrawModeChanged: checkState()
+                        }
+                        //! [4]
     }
     Image {
         id: question
-        y: 170
-        anchors.left: parent.left
-        anchors.leftMargin: 11
-        source: "images/cup structure/coffee_cup_large.png"
     }
+
+    RowLayout {
+            id: buttonLayout
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            opacity: 0.5
+
+            NewButton {
+                id: surfaceGridToggle
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                text: "Show Surface Grid"
+                //! [1]
+                onClicked: {
+                    if (surfaceSeries.drawMode & Surface3DSeries.DrawWireframe) {
+                        surfaceSeries.drawMode &= ~Surface3DSeries.DrawWireframe;
+                        heightSeries.drawMode &= ~Surface3DSeries.DrawWireframe;
+                    } else {
+                        surfaceSeries.drawMode |= Surface3DSeries.DrawWireframe;
+                        heightSeries.drawMode |= Surface3DSeries.DrawWireframe;
+                    }
+                }
+                //! [1]
+            }
+
+            NewButton {
+                id: surfaceToggle
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                text: "Hide Surface"
+                //! [8]
+                onClicked: {
+                    if (surfaceSeries.drawMode & Surface3DSeries.DrawSurface) {
+                        surfaceSeries.drawMode &= ~Surface3DSeries.DrawSurface;
+                        heightSeries.drawMode &= ~Surface3DSeries.DrawSurface;
+                    } else {
+                        surfaceSeries.drawMode |= Surface3DSeries.DrawSurface;
+                        heightSeries.drawMode |= Surface3DSeries.DrawSurface;
+                    }
+                }
+                //! [8]
+            }
+
+            NewButton {
+                id: flatShadingToggle
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                text: surfaceSeries.flatShadingSupported ? "Show Flat" : "Flat not supported"
+                enabled: surfaceSeries.flatShadingSupported
+                //! [2]
+                onClicked: {
+                    if (surfaceSeries.flatShadingEnabled === true) {
+                        surfaceSeries.flatShadingEnabled = false;
+                        heightSeries.flatShadingEnabled = false;
+                        text = "Show Flat"
+                    } else {
+                        surfaceSeries.flatShadingEnabled = true;
+                        heightSeries.flatShadingEnabled = true;
+                        text = "Show Smooth"
+                    }
+                }
+                //! [2]
+            }
+
+            NewButton {
+                id: backgroundToggle
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                text: "Hide Background"
+                onClicked: {
+                    if (surfacePlot.theme.backgroundEnabled === true) {
+                        surfacePlot.theme.backgroundEnabled = false;
+                        text = "Show Background"
+                    } else {
+                        surfacePlot.theme.backgroundEnabled = true;
+                        text = "Hide Background"
+                    }
+                }
+            }
+
+            NewButton {
+                id: gridToggle
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                text: "Hide Grid"
+                onClicked: {
+                    if (surfacePlot.theme.gridEnabled === true) {
+                        surfacePlot.theme.gridEnabled = false;
+                        text = "Show Grid"
+                    } else {
+                        surfacePlot.theme.gridEnabled = true;
+                        text = "Hide Grid"
+                    }
+                }
+            }
+
+            NewButton {
+                id: seriesToggle
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                text: "Switch to Height Map Series"
+                //! [3]
+                onClicked: {
+                    if (surfaceSeries.visible === false) {
+                        surfacePlot.axisY.max = 500.0
+                        surfaceSeries.visible = true
+                        heightSeries.visible = false
+                        middleGradient.position = 0.25
+                        text = "Switch to Height Map Series"
+                    } else {
+                        surfacePlot.axisY.max = 250.0
+                        surfaceSeries.visible = false
+                        heightSeries.visible = true
+                        middleGradient.position = 0.50
+                        text = "Switch to Item Model Series"
+                    }
+                }
+                //! [3]
+            }
+        }
+
+    function checkState() {
+            if (surfaceSeries.drawMode & Surface3DSeries.DrawSurface)
+                surfaceToggle.text = "Hide Surface"
+            else
+                surfaceToggle.text = "Show Surface"
+
+            if (surfaceSeries.drawMode & Surface3DSeries.DrawWireframe)
+                surfaceGridToggle.text = "Hide Surface Grid"
+            else
+                surfaceGridToggle.text = "Show Surface Grid"
+        }
 }
+

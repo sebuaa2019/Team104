@@ -49,7 +49,9 @@
 ****************************************************************************/
 
 import QtQuick 2.4
+import QtQuick.Controls 2.0
 import Coffee 1.0
+import QtGamepad 1.0
 
 ApplicationFlowForm {
     id: applicationFlow
@@ -148,5 +150,100 @@ ApplicationFlowForm {
             easing.type: Easing.InOutQuad
         }
     }
+
+    //ROBOT NAVIGATION CONTROLS
+    choosingCoffee.buttonY.onPressed: {
+        choosingCoffee.keypressed.text = "Going Up";
+    }
+
+    choosingCoffee.buttonY.onReleased: {
+        choosingCoffee.keypressed.text = "Robot has done moving";
+    }
+
+    choosingCoffee.buttonA.onPressed: {
+        choosingCoffee.keypressed.text = "Going Down";
+    }
+
+    choosingCoffee.buttonA.onReleased: {
+        choosingCoffee.keypressed.text = "Robot has done moving";
+    }
+
+    choosingCoffee.buttonB.onPressed: {
+        choosingCoffee.keypressed.text = "Going Right";
+    }
+
+    choosingCoffee.buttonB.onReleased: {
+        choosingCoffee.keypressed.text = "Robot has done moving";
+    }
+
+    choosingCoffee.buttonX.onPressed: {
+        choosingCoffee.keypressed.text = "Going Left";
+    }
+
+    choosingCoffee.buttonX.onReleased: {
+        choosingCoffee.keypressed.text = "Robot has done moving";
+    }
+
+    choosingCoffee.r1Button.onPressed: {
+        choosingCoffee.keypressed.text = "Rotating Left";
+    }
+
+    choosingCoffee.r1Button.onReleased: {
+        choosingCoffee.keypressed.text = "Robot has done moving";
+    }
+
+    choosingCoffee.r2Button.onPressed: {
+        choosingCoffee.keypressed.text = "Rotating Right";
+    }
+
+    choosingCoffee.r2Button.onReleased: {
+        choosingCoffee.keypressed.text = "Robot has done moving";
+    }
+
+    Keys.onPressed: {
+        if (event.key === Qt.Key_Up) {
+            choosingCoffee.keypressed.text = "Going Up";
+        } else if (event.key === Qt.Key_Down) {
+            choosingCoffee.keypressed.text = "Going Down";
+        } else if (event.key === Qt.Key_Right) {
+            choosingCoffee.keypressed.text = "Going Right";
+        } else if (event.key === Qt.Key_Left) {
+            choosingCoffee.keypressed.text = "Going Left";
+        } else if (event.key === Qt.Key_Return) {
+            choosingCoffee.keypressed.text = "Key Return Pressed";
+        } else if (event.key === Qt.Key_Back) {
+            choosingCoffee.keypressed.text = "Key Back Pressed";
+        } else if (event.key === Qt.Key_Forward) {
+            choosingCoffee.keypressed.text = "Key Forward Pressed";
+        } else if (event.key === Qt.Key_Q) {
+            choosingCoffee.keypressed.text = "Rotating Left";
+        } else if (event.key === Qt.Key_E) {
+            choosingCoffee.keypressed.text = "Rotating Right"
+        }
+    }
+
+    Keys.onReleased: {
+        /*if (event.key === Qt.Key_Up) {
+            choosingCoffee.keypressed.text = "Robot has done moving";
+        } else if (event.key === Qt.Key_Down) {
+            choosingCoffee.keypressed.text = "Robot has done moving";
+        } else if (event.key === Qt.Key_Right) {
+            choosingCoffee.keypressed.text = "Robot has done moving";
+        } else if (event.key === Qt.Key_Left) {
+            choosingCoffee.keypressed.text = "Robot has done moving";
+        } else if (event.key === Qt.Key_Return) {
+            choosingCoffee.keypressed.text = "Robot has done moving";
+        } else if (event.key === Qt.Key_Back) {
+            choosingCoffee.keypressed.text = "Robot has done moving";
+        } else if (event.key === Qt.Key_Forward) {
+
+        } else if (event.key === Qt.Key_Q) {
+
+        } else if (event.key === Qt.Key_E) {
+            choosingCoffee.keypressed.text = "Rotating Right"
+        }*/
+        choosingCoffee.keypressed.text = "Robot has done moving";
+    }
+    // END OF ROBOT NAVIGATION CONTROL
 
 }

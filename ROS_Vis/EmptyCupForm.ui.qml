@@ -58,8 +58,8 @@ Item {
     id: root
     width: Constants.width
     height: Constants.height
-    property alias continueButton: continueButton
     property alias productAButton: productAButton
+    property alias continueButton: continueButton
     property alias productBButton: productBButton
 
     state: "initial state"
@@ -70,19 +70,27 @@ Item {
         anchors.fill: parent
     }
 
-    ColumnLayout {
-        x: 390
-        y: 130
+    RowLayout {
+        x: 115
+        y: 225
+        width: 794
+        height: 252
         spacing: 64
 
         CoffeeButton {
             id: productAButton
             text: "Product A"
+            color: "#ffffff"
+            Layout.fillWidth: false
         }
 
         CoffeeButton {
             id: productBButton
+            x: 0
+            y: 0
             text: "Product B"
+            color: "#ffffff"
+            Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
             source: "images/icons/coffees/Macchiato.png"
         }
     }

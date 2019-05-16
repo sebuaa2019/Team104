@@ -2,7 +2,7 @@
 
   <arg name="model" default="$(find wpb_home_bringup)/urdf/wpb_home_mani.urdf"/>
   <arg name="gui" default="true" />
-  <arg name="rvizconfig" default="$(find wpb_home_apps)/rviz/slam_mani.rviz" />
+  <arg name="rvizconfig" default="$(find Team104)/rviz/slam_mani.rviz" />
 
   <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
   <param name="use_gui" value="$(arg gui)"/> 
@@ -160,6 +160,6 @@
   <node name="soundplay_node" pkg="sound_play" type="soundplay_node.py"/>
 
   <!-- Run script -->
-  <node pkg="wpb_home_apps" type="shopping" name="shopping" output="screen"/>
+  <node pkg="Team104" type="shopping" name="shopping" output="screen"/>
 
 </launch>

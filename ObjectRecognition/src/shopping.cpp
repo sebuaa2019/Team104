@@ -218,22 +218,6 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
         int nLenOfKW = strlen(strKeyword.c_str());
         if(nLenOfKW > 0)
         {
-        	cv_bridge::CvImagePtr cv_ptr;
-		    try
-		    {
-		        cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-		    }
-		    catch (cv_bridge::Exception& e)
-		    {
-		        ROS_ERROR("cv_bridge exception: %s", e.what());
-		        return;
-		    }
-
-            // 保存图片
-            imwrite("/home/robot/catkin_ws/src/wpb_home_apps/src/ImageRecognition/image.jpg",cv_ptr->image);
-            ROS_INFO("[callbackRGB] Save the image of object remembered !");
-            Speak("Picture captured.");
-
             FILE* python_exec = popen("python3 /home/robot/catkin_ws/src/wpb_home_apps/src/ImageRecognition/sdk_ImageRecognition.py", "r");
             char keyword[1024]; //设置一个合适的长度，以存储每一行输出
             fgets(keyword, sizeof(keyword), python_exec);
@@ -280,6 +264,23 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
     }
 }
 
+
+void ProcColorCB(const sensor_msgs::ImageConstPtr& msg)
+{
+    //ROS_INFO("ProcColorCB");
+    cv_bridge::CvImagePtr cv_ptr;
+    try
+    {
+        cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
+    }
+    catch (cv_bridge::Exception& e)
+    {
+        ROS_ERROR("cv_bridge exception: %s", e.what());
+        return;
+    }
+    imwrite("/home/images/image.jpg",cv_ptr->image);
+}
+
 // 物品抓取状态
 void GrabResultCallback(const std_msgs::String::ConstPtr& res)
 {
@@ -309,6 +310,7 @@ int main(int argc, char** argv)
 
     ros::NodeHandle n;
     ros::Subscriber sub_sr = n.subscribe("/xfyun/iat", 10, KeywordCB);
+    ros::Subscriber rgb_sub = n.subscribe("/kinect2/qhd/image_color", 1 , ProcColorCB);
     follow_start = n.serviceClient<wpb_home_tutorials::Follow>("wpb_home_follow/start");
     follow_stop = n.serviceClient<wpb_home_tutorials::Follow>("wpb_home_follow/stop");
     follow_resume = n.serviceClient<wpb_home_tutorials::Follow>("wpb_home_follow/resume");

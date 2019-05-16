@@ -36,5 +36,5 @@ def get_label(path='image.jpg'):
     
 
 if __name__ == '__main__':
-    path = '/home/robot/catkin_ws/src/wpb_home_apps/src/ImageRecognition/image.jpg'
+    path = '/home/images/image.jpg'
     get_label(path)

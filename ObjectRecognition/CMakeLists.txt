@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(wpb_home_apps
+project(Team104
 )
 
 ## Add support for C++11, supported in ROS Kinetic and newer

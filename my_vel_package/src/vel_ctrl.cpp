@@ -5,6 +5,7 @@
 #include <geometry_msgs/Twist.h>
 
 using namespace std;
+clock_t pre_time, post_time;
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "vel_ctrl");
@@ -30,6 +31,6 @@ int main(int argc, char** argv)
 	
         ros::spinOnce();
     }
-
+    
 return 0;
 }

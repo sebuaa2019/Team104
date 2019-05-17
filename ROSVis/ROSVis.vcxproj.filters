@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icons\coffees\Americano.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ApplicationFlow.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ApplicationFlowForm.ui.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ButtonImage.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ChooseProduct.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ChooseProductForm.ui.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Constants.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Data.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\icons\coffees\Espresso.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\icons\coffees\Latte.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\icons\coffees\Macchiato.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Map.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="MovementForm.ui.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Navigating.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="NavigatingForm.ui.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="NavigationButton.ui.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="NewButton.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="SideBar.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="SideBarForm.ui.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="TitilliumWeb-Regular.ttf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UserButton.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\icons\coffees\cappucino.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\icons\contents\coffee.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="elements\coffee_cup_back.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="elements\coffee_cup_coverplate.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="elements\coffee_cup_front.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="structure\coffee_cup_large.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="structure\coffee_cup_outline.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\cup">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="structure\cup">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\heightmap.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="controls\line.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="structure\liquids\liquid_coffee.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="structure\liquids\liquid_foam.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="structure\liquids\liquid_milk.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="main.cpp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="main.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\icons\contents\milk.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <QtRcc Include="qml.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <None Include="qmldir">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\qmlsurface-example.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\icons\contents\sugar.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="controls\buttons\back\white.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="controls\buttons\go\white.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\buttons\xboxControllerButtonA.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\buttons\xboxControllerButtonB.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\buttons\xboxControllerButtonX.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\buttons\xboxControllerButtonY.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\buttons\xboxControllerDPad.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\buttons\xboxControllerLeftShoulder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\buttons\xboxControllerRightShoulder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

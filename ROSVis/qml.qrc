@@ -1,0 +1,52 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>SideBar.qml</file>
+        <file>SideBarForm.ui.qml</file>
+        <file>UserButton.qml</file>
+        <file>Data.qml</file>
+        <file>Map.qml</file>
+        <file>NewButton.qml</file>
+        <file>MovementForm.ui.qml</file>
+        <file>ButtonImage.qml</file>
+        <file>ChooseProduct.qml</file>
+        <file>ChooseProductForm.ui.qml</file>
+        <file>Navigating.qml</file>
+        <file>NavigatingForm.ui.qml</file>
+        <file>NavigationButton.ui.qml</file>
+        <file>images/buttons/xboxControllerButtonA.png</file>
+        <file>images/buttons/xboxControllerButtonB.png</file>
+        <file>images/buttons/xboxControllerButtonX.png</file>
+        <file>images/buttons/xboxControllerButtonY.png</file>
+        <file>images/buttons/xboxControllerDPad.png</file>
+        <file>images/buttons/xboxControllerLeftShoulder.png</file>
+        <file>images/buttons/xboxControllerRightShoulder.png</file>
+        <file>images/cup structure/cup elements/coffee_cup_back.png</file>
+        <file>images/cup structure/cup elements/coffee_cup_coverplate.png</file>
+        <file>images/cup structure/cup elements/coffee_cup_front.png</file>
+        <file>images/cup structure/liquids/liquid_coffee.png</file>
+        <file>images/cup structure/liquids/liquid_foam.png</file>
+        <file>images/cup structure/liquids/liquid_milk.png</file>
+        <file>images/cup structure/coffee_cup_large.png</file>
+        <file>images/cup structure/coffee_cup_outline.png</file>
+        <file>images/icons/coffees/Americano.png</file>
+        <file>images/icons/coffees/cappucino.png</file>
+        <file>images/icons/coffees/Espresso.png</file>
+        <file>images/icons/coffees/Latte.png</file>
+        <file>images/icons/coffees/Macchiato.png</file>
+        <file>images/icons/contents/coffee.png</file>
+        <file>images/icons/contents/milk.png</file>
+        <file>images/icons/contents/sugar.png</file>
+        <file>images/ui controls/buttons/back/white.png</file>
+        <file>images/ui controls/buttons/go/white.png</file>
+        <file>images/ui controls/line.png</file>
+        <file>images/heightmap.png</file>
+        <file>images/qmlsurface-example.png</file>
+        <file>ApplicationFlow.qml</file>
+        <file>ApplicationFlowForm.ui.qml</file>
+        <file>main.cpp</file>
+        <file>Constants.qml</file>
+        <file>qmldir</file>
+        <file>TitilliumWeb-Regular.ttf</file>
+    </qresource>
+</RCC>

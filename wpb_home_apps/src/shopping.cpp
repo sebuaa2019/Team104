@@ -58,15 +58,9 @@
 #include <iostream>
 #include <algorithm>
 
-using namespace std;
+#include "team104_shopping.h"
 
-#define STATE_READY     0
-#define STATE_FOLLOW    1
-#define STATE_ASK       2
-#define STATE_GOTO      3
-#define STATE_GRAB      4
-#define STATE_COMEBACK  5
-#define STATE_PASS      6
+using namespace std;
 
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
 static string strGoto;
@@ -96,6 +90,11 @@ static int nState = STATE_READY;
 static int nDelay = 0;
 
 static vector<string> arKeyword;
+
+void change_status(int newStatus)
+{
+    nState = newStatus;
+}
 
 // 添加航点关键词
 void InitKeyword()
@@ -245,7 +244,8 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
         {
             FollowSwitch(false, 0);
             AddNewWaypoint("master");
-            nState = STATE_ASK;
+            // nState = STATE_ASK;
+            nState = STATE_WAIT;
             nDelay = 0;
             Speak("OK. What do you want me to fetch?");
         }
@@ -347,7 +347,8 @@ int main(int argc, char** argv)
             {
                 AddNewWaypoint("start");
                 nDelay = 0;
-                nState = STATE_FOLLOW;
+                // nState = STATE_FOLLOW;
+                nState = STATE_WAIT
             }
         }
 
@@ -493,7 +494,8 @@ int main(int argc, char** argv)
             {
                 PassSwitch(false);
                 Speak("OK. What do you want next?");
-                nState = STATE_ASK;
+                // nState = STATE_ASK;
+                nState = STATE_WAIT;
             }
         }
         

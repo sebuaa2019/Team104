@@ -200,9 +200,33 @@ include_directories(
 
 
 add_executable(vel_ctrl
-  src/vel_ctrl.cpp
+  src/vel_foward.cpp
 )
 add_dependencies(vel_ctrl ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(vel_ctrl
+  ${catkin_LIBRARIES}
+)
+
+add_executable(vel_right
+  src/vel_right.cpp
+)
+add_dependencies(vel_right ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(vel_right
+  ${catkin_LIBRARIES}
+)
+
+add_executable(vel_left
+  src/vel_left.cpp
+)
+add_dependencies(vel_left ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(vel_left
+  ${catkin_LIBRARIES}
+)
+
+add_executable(vel_backward
+  src/vel_backward.cpp
+)
+add_dependencies(vel_backward ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(vel_backward
   ${catkin_LIBRARIES}
 )

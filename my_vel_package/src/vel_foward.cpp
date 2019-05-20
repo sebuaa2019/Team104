@@ -138,8 +138,8 @@ int main(int argc, char** argv)
     while(ros::ok() && times)
     {
         geometry_msgs::Twist vel_cmd;
-        vel_cmd.linear.x = 0;
-        vel_cmd.linear.y = 0.1;
+        vel_cmd.linear.x = 0.1;
+        vel_cmd.linear.y = 0;
         vel_cmd.linear.z = 0;
         
         vel_cmd.angular.x = 0;

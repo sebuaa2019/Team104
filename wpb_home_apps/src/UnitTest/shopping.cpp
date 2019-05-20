@@ -105,7 +105,7 @@ void InitKeyword()
     arKeyword.push_back("record");
     arKeyword.push_back("Record");
     arKeyword.push_back("fruit");
-    arKeyword.push_back("bottle");
+    ar
 }
 
 // 从句子里找arKeyword里存在的关键词
@@ -242,7 +242,7 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
         }
 
         // 停止跟随的指令
-        int nFindIndex = msg->data.find("top");
+        int nFindIndex = msg->data.find("top follow");
         if(nFindIndex >= 0)
         {
             FollowSwitch(false, 0);

@@ -67,6 +67,7 @@ using namespace std;
 #define STATE_GRAB      4
 #define STATE_COMEBACK  5
 #define STATE_PASS      6
+#define STATE_WAIT      7
 
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
 static string strGoto;
@@ -245,7 +246,8 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
         {
             FollowSwitch(false, 0);
             AddNewWaypoint("master");
-            nState = STATE_ASK;
+            // nState = STATE_ASK;
+            nState = STATE_WAIT;
             nDelay = 0;
             Speak("OK. What do you want me to fetch?");
         }
@@ -337,6 +339,23 @@ int main(int argc, char** argv)
     ros::Rate r(30);
     while(ros::ok())
     {
+        if (nState == STATE_WAIT)
+        {
+            ifstream in("/home/robot/team104_temp/status.txt");
+            if (! in.is_open())
+            { 
+                return;
+            }
+            if (!in.eof())
+            {
+                in.getline (buffer,100);
+                if buffer[0] == '1':
+                    nState = STATE_FOLLOW;
+                else if buffer[0] == '2':
+                    nState = STATE_ASK;
+            }
+        }
+
         // 1、刚启动，准备
         if(nState == STATE_READY)
         {
@@ -347,7 +366,8 @@ int main(int argc, char** argv)
             {
                 AddNewWaypoint("start");
                 nDelay = 0;
-                nState = STATE_FOLLOW;
+                // nState = STATE_FOLLOW;
+                nState = STATE_WAIT
             }
         }
 
@@ -494,6 +514,7 @@ int main(int argc, char** argv)
                 PassSwitch(false);
                 Speak("OK. What do you want next?");
                 nState = STATE_ASK;
+                // nState = STATE_WAIT;
             }
         }
         

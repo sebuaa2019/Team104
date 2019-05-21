@@ -130,6 +130,25 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="pic">
+   <property name="geometry">
+    <rect>
+     <x>76</x>
+     <y>146</y>
+     <width>590</width>
+     <height>400</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-repeat: no-repeat; </string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

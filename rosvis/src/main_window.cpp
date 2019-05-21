@@ -97,8 +97,9 @@ void MainWindow::closeEvent(QCloseEvent *event)
 void MainWindow::on_adminButton_clicked()
 {
 	RobotControl robotControl;
-	robotControl.setModal(true);
-  	//change_status(1);
+        robotControl.setModal(true);
+  	/*wpb_home_apps *wha = new wpb_home_apps::team104_shopping;
+        wha->change_status(1);*/
 	QString path= "/home/robot/team104_temp/";
 	QDir dir;
   	QFile file(path + "status.txt");
@@ -112,7 +113,7 @@ void MainWindow::on_adminButton_clicked()
 		in << "1";
   	}
   	file.close();
-	robotControl.exec();
+  robotControl.exec();
 }
 
 void MainWindow::on_userButton_clicked()

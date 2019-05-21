@@ -21,6 +21,7 @@
   <build_depend>pcl_ros</build_depend>
   <build_depend>wpb_home_apps</build_depend>
   <build_depend>libqt4-dev</build_depend>
+  <build_depend>rviz</build_depend>
   <!--<build_export_depend>qt_build roscpp rospy pcl_conversions pcl_ros wpb_home_apps libqt4-dev</build_export_depend>-->
   <run_depend>qt_build</run_depend>
   <run_depend>roscpp</run_depend>
@@ -29,6 +30,7 @@
   <run_depend>pcl_ros</run_depend>
   <run_depend>wpb_home_apps</run_depend>
   <run_depend>libqt4-dev</run_depend>
+  <run_depend>rviz</run_depend>
 
   <export>
     <!-- Other tools can request additional information be placed here -->

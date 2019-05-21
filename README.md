@@ -1,60 +1,32 @@
 ﻿# Beihang University SE - Team104
 ## Project Summary
-Simple Robot based on ROS
+ROSVIS - Simple ROS Robot Visualization
 
-Hardware: 
-* Embedded system development board
-* Various types of sensors
-* Motion devices
-* Mechanical arm devices
 
-Target machine software:
-* Embedded operating system: LINUX system
-* Development language: C/C++/Python
+##Environment Setup
+1. $ sudo apt-get install ros-indigo-qt-create
+2. $ sudo apt-get install ros-indigo-qt-build
+3. Copy rosvis folder to catkin_ws/src/
 
-Features:
-* Support ROS development
-* Binocular sensor
-* Indoor navigation
+##How to Run
+1. cd /catkin_ws/src
+2. catkin_make
+3. rosrun rosvis rosvis
 
-## Milestones
-* (2019-3-10) Project Design Document
-* (2019-3-31) Project Requirements Analysis Document
-* (2019-4-02) Project Requirements Review
-* (2019-4-21) Software Requirements Analysis/Design Document
-* (2019-4-23) Software Requirements Analysis/Design Review
-* (2019-5-14) Code Review
-* (2019-6-04) Testing Document Review 1
-* (2019-6-11) Testing Document Review 2
-* (2019-6-18) End of Lesson
+##How things work
+###Choose user type
+#### Admin
+- Control the robot around with the buttons
+- Movement Id will be printed to a temp file
+- Image will be exported to a temp file and refreshed every 0.1 seconds
 
-## Meeting Summary
-### 4月23日
+#### Normal User
+- Click on the product for the robot to navigate to the item
+- Clicking the button will print the robot status id to a temp file
 
-当前分工：
-* 刘逸：		物品抓取
-* 于金泽：	语音识别
-* 周美廷：	GUI，数据库
-* 马力：		导航，SLAM，路径规划
-* 张金源：	导航，SLAM，路径规划
+##Temp Files
+For movement: movement.txt
+For status  : status.txt
+For image   : image.bmp
+1. /home/{username}/team104_temp/
 
-流程图：
-* 重新规划流程图并加上物品抓取功能
-* 考虑如何处理突然出现障碍（停止等待或绕开）
-* 添加语音识别功能
-
-数据库设计：
-加上数据库模块用来存储物品和地图信息，使用机器人时会调用数据库的信息
-需要存的信息：
-* 用户信息
-* 地图
-* 日志
-* 物品信息
-* 关键词
-
-类图重画
-
-任务：
-* 4月26日7点开会
-* 下次开会前完成类图和相关内容填写
-* 安装Ubuntu和ROS系统

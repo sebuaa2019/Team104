@@ -10,7 +10,7 @@ project(rosvis)
 ##############################################################################
 
 # qt_build provides the qt cmake glue, roscpp the comms for a default talker
-find_package(catkin REQUIRED COMPONENTS qt_build roscpp rospy pcl_conversions pcl_ros wpb_home_apps)
+find_package(catkin REQUIRED COMPONENTS qt_build rviz roscpp rospy pcl_conversions pcl_ros wpb_home_apps)
 
 find_package(wpb_home_apps REQUIRED)
 include_directories(
@@ -18,6 +18,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
   ${wpb_home_apps_INCLUDE_DIRS}
 )
+link_directories(${catkin_LIBRARY_DIRS})
 # Use this to define what the package will export (e.g. libs, headers).
 # Since the default here is to produce only a binary, we don't worry about
 # exporting anything. 

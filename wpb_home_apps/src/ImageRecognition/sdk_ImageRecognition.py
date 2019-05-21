@@ -40,8 +40,9 @@ def get_labels(path='image.jpg'):
             print(keywords_eng[i], end='')
             return
     print('Error: Unexpected object')
+    print(keywords)
     
 
 if __name__ == '__main__':
-    path = '/home/robot/images/image.bmp'
-    get_label(path)
+    path = '/home/robot/team104_temp/image.bmp'
+    get_labels(path)

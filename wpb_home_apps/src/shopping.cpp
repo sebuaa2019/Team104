@@ -57,6 +57,7 @@
 #include <cstring>
 #include <iostream>
 #include <algorithm>
+#include <fstream>
 
 using namespace std;
 
@@ -235,7 +236,7 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
 	            Speak(strSpeak);
             } else
             {
-				AddNewWaypoint(objectName);
+		    AddNewWaypoint(objectName);
 	            string strSpeak = objectName + " . OK. I have memoried. Next one , please"; 
 	            Speak(strSpeak);
             }
@@ -250,7 +251,6 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
             // nState = STATE_ASK;
             nState = STATE_WAIT;
             nDelay = 0;
-            Speak("OK. What do you want me to fetch?");
         }
     }
 
@@ -273,6 +273,7 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
 
 void ProcColorCB(const sensor_msgs::ImageConstPtr& msg)
 {
+    static int count = 0;
     //ROS_INFO("ProcColorCB");
     cv_bridge::CvImagePtr cv_ptr;
     try
@@ -284,10 +285,18 @@ void ProcColorCB(const sensor_msgs::ImageConstPtr& msg)
         ROS_ERROR("cv_bridge exception: %s", e.what());
         return;
     }
-    imwrite("/home/robot/images/image.bmp",cv_ptr->image);
-    // cout << cv_ptr->image.size() << endl;
-    // exit(0);
-    // cout << "Image saved" << endl;
+    int res = imwrite("/home/robot/team104_temp/image.bmp",cv_ptr->image);
+   
+    if (count == 0)
+    {
+        cout << cv_ptr->image.size() << endl;
+        cout << "Image saved" << endl;
+    }
+    if (res == 0)
+    {
+        cout << "Imwrite failed." << endl;
+        cout << cv_ptr->image << endl;
+    }
 }
 
 // 物品抓取状态
@@ -343,18 +352,28 @@ int main(int argc, char** argv)
         if (nState == STATE_WAIT)
         {
             ifstream in("/home/robot/team104_temp/status.txt");
-            if (! in.is_open())
+            if (in.is_open())
             { 
-                return;
+                if (!in.eof())
+                {
+                    char buffer[20];
+                    in >> buffer;
+                    if (buffer[0] == '1')
+                    {
+                        nState = STATE_FOLLOW;
+                        Speak("SLAM ON");
+                        cout << "SLAM ON" << endl;
+                        
+                    }
+                    else if (buffer[0] == '2')
+                    {
+                        nState = STATE_ASK;
+                        Speak("OK. What do you want me to fetch?");
+                        cout << "ASK" << endl;
+                    }
+                }    
             }
-            if (!in.eof())
-            {
-                in.getline (buffer,100);
-                if buffer[0] == '1':
-                    nState = STATE_FOLLOW;
-                else if buffer[0] == '2':
-                    nState = STATE_ASK;
-            }
+            
         }
 
         // 1、刚启动，准备
@@ -368,7 +387,7 @@ int main(int argc, char** argv)
                 AddNewWaypoint("start");
                 nDelay = 0;
                 // nState = STATE_FOLLOW;
-                nState = STATE_WAIT
+                nState = STATE_WAIT;
             }
         }
 
@@ -377,7 +396,7 @@ int main(int argc, char** argv)
         {
             if(nDelay == 0)
             {
-               FollowSwitch(true, 0.7);
+               FollowSwitch(false, 0.7);
             }
             nDelay ++;
         }

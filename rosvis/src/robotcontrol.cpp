@@ -5,17 +5,31 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDir>
+#include <QTimer>
 
 RobotControl::RobotControl(QWidget *parent) :
   QDialog(parent),
   ui(new Ui::RobotControl)
 {
   ui->setupUi(this);
+
+  QPixmap mapPic ("/home/robot/team104_temp/image.bmp");
+  ui->pic->setPixmap(mapPic);
+  QTimer *timer = new QTimer(this);
+  QObject::connect(timer, SIGNAL(timeout()), this, SLOT(updatePic()));
+  timer->start(100);
 }
 
 RobotControl::~RobotControl()
 {
   delete ui;
+}
+
+void RobotControl::updatePic()
+{
+  QPixmap mapPic ("/home/robot/team104_temp/image.bmp");
+  ui->pic->setPixmap(mapPic);
+  ui->pic->repaint();
 }
 
 void RobotControl::writeToFile(const QString& stat)
@@ -38,6 +52,7 @@ void RobotControl::writeToFile(const QString& stat)
 void RobotControl::on_yButton_clicked()
 {
   writeToFile("0");
+  updatePic();
 }
 
 void RobotControl::on_xButton_clicked()

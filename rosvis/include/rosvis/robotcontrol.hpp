@@ -2,6 +2,7 @@
 #define ROBOTCONTROL_H
 
 #include <QDialog>
+#include <QWidget>
 
 namespace Ui {
 class RobotControl;
@@ -28,6 +29,8 @@ public Q_SLOTS:
   void on_lButton_clicked();
 
   void on_rButton_clicked();
+
+  void updatePic();
 
 private:
   Ui::RobotControl *ui;

@@ -12,6 +12,7 @@
 #include <QtGui>
 #include <QApplication>
 #include "../include/rosvis/main_window.hpp"
+#include <ros/ros.h>
 
 /*****************************************************************************
 ** Main
@@ -19,14 +20,19 @@
 
 int main(int argc, char **argv) {
 
+    if(!ros::isInitialized())
+    {
+      ros::init(argc, argv, "rosvis", ros::init_options::AnonymousName);
+    }
     /*********************
     ** Qt
     **********************/
     QApplication app(argc, argv);
+
     rosvis::MainWindow w(argc,argv);
     w.show();
     app.connect(&app, SIGNAL(lastWindowClosed()), &app, SLOT(quit()));
     int result = app.exec();
 
-	return result;
+    return result;
 }

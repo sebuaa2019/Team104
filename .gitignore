@@ -1,0 +1,14 @@
+
+ObjectRecognition/src/ImageRecognition/\.vscode/
+
+ObjectRecognition/src/ImageRecognition/__pycache__/
+
+ObjectRecognition/src/ImageRecognition/qcloud_image/__pycache__/
+
+wpb_home_apps/src/ImageRecognition/\.vscode/
+
+wpb_home_apps/src/ImageRecognition/__pycache__/
+
+wpb_home_apps/src/ImageRecognition/qcloud_image/__pycache__/
+
+new/

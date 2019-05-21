@@ -6,11 +6,17 @@
 #include <QTextStream>
 #include <QDir>
 
+#include <QGridLayout>
+#include <QVBoxLayout>
+
 RobotControl::RobotControl(QWidget *parent) :
   QDialog(parent),
   ui(new Ui::RobotControl)
 {
   ui->setupUi(this);
+  QWidget *pic = new QWidget(this);
+  pic->setStyleSheet("background-image: url(/home/robot/team104_temp/image.pmp); background-repeat: no-repeat; background-position: center center fixed");
+  pic->setGeometry(QRect(76,146,590,400));
 }
 
 RobotControl::~RobotControl()

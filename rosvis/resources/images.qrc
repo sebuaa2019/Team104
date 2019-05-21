@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/icon.png</file>
+        <file>images/cappucino.png</file>
+        <file>images/coffee.png</file>
+        <file>images/coffee_cup_back.png</file>
+        <file>images/coffee_cup_coverplate.png</file>
+        <file>images/coffee_cup_front.png</file>
+        <file>images/coffee_cup_large.png</file>
+        <file>images/coffee_cup_outline.png</file>
+        <file>images/line.png</file>
+        <file>images/liquid_coffee.png</file>
+        <file>images/liquid_foam.png</file>
+        <file>images/liquid_milk.png</file>
+        <file>images/Macchiato.png</file>
+        <file>images/milk.png</file>
+        <file>images/sugar.png</file>
+        <file>images/white-back.png</file>
+        <file>images/white-go.png</file>
+        <file>images/xboxControllerButtonA.png</file>
+        <file>images/xboxControllerButtonB.png</file>
+        <file>images/xboxControllerButtonX.png</file>
+        <file>images/xboxControllerButtonY.png</file>
+        <file>images/xboxControllerLeftShoulder.png</file>
+        <file>images/xboxControllerRightShoulder.png</file>
+    </qresource>
+</RCC>

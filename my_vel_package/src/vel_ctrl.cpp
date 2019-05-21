@@ -49,6 +49,7 @@ int main(){
 			}
 		}
 	}
+	return 0; 
 }
 int times;
 void vel_forward(int argc, char** argv)

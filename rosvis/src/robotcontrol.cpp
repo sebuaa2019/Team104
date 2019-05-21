@@ -6,6 +6,7 @@
 #include <QTextStream>
 #include <QDir>
 #include <QTimer>
+#include <QProcess>
 
 RobotControl::RobotControl(QWidget *parent) :
   QDialog(parent),
@@ -52,30 +53,41 @@ void RobotControl::writeToFile(const QString& stat)
 void RobotControl::on_yButton_clicked()
 {
   writeToFile("0");
-  updatePic();
+  QProcess builder;
+  builder.start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_forward");
 }
 
 void RobotControl::on_xButton_clicked()
 {
   writeToFile("2");
+  QProcess builder;
+  builder.start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_left");
 }
 
 void RobotControl::on_bButton_clicked()
 {
   writeToFile("3");
+  QProcess builder;
+  builder.start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_right");
 }
 
 void RobotControl::on_aButton_clicked()
 {
   writeToFile("1");
+  QProcess builder;
+  builder.start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_backward");
 }
 
 void RobotControl::on_lButton_clicked()
 {
   writeToFile("4");
+  QProcess builder;
+  builder.start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_turnleft");
 }
 
 void RobotControl::on_rButton_clicked()
 {
   writeToFile("5");
+  QProcess builder;
+  builder.start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_turnright");
 }

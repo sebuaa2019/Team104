@@ -12,30 +12,43 @@ void vel_right(int argc, char** argv);
 void vel_turnleft(int argc, char** argv);
 void vel_turnright(int argc, char** argv);
 int main(){
-	string chengxu;
-	char *p;
-	char ch;
+	int num;
 	int argc;
 	char** argv;
-	fstream file("/home/robot/team104_temp/movement.txt",ios::in);
-	if(file.is_open()){
-		file.seekg(0, ios::end);
-			chengxu.resize(file.tellg());
-			file.seekg(0, ios::beg);
-			file.read(&chengxu[0], chengxu.size());
+	while(1){
+		fstream file("/home/robot/team104_temp/movement.txt",ios::in);
+		if(file.is_open()){
+			file>>num;
 			file.close();
+		}
+		if(num==0){
+			vel_forward(argc,argv);
+		}
+		else if(number==1){
+			vel_backward(argc,argv);
+		}
+		else if(number==2){
+			vel_left(argc,argv);
+		}
+		else if(number==3){
+			vel_right(argc,argv);
+		}
+		else if(number==4){
+			vel_turnleft(argc,argv);
+		}
+		else if(number==5){
+			vel_turnright(argc,argv);
+		}
+		else{
+			continue;
+		}		
+		fstream file1("/home/robot/team104_temp/movement.txt",ios::out);
+		if(file1.is_open()){
+			file1<<6;
+			file1.close();
+			}
+		}
 	}
-	p = &chengxu[0];
-	ch = *p;
-	switch(ch){
-		case 0:vel_forward(argc,argv);
-		case 1:vel_backward(argc,argv);
-		case 2:vel_left(argc,argv);
-		case 3:vel_right(argc,argv);
-		case 4:vel_turnleft(argc,argv);
-		case 5:vel_turnright(argc,argv);
-	}
-	return 0;
 }
 int times;
 void vel_forward(int argc, char** argv)

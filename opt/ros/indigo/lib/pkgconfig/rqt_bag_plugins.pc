@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rqt_bag_plugins
+Description: Description of rqt_bag_plugins
+Version: 0.4.8
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

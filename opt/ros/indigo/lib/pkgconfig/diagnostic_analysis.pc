@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: diagnostic_analysis
+Description: Description of diagnostic_analysis
+Version: 1.9.3
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: diagnostic_msgs rosbag roslib

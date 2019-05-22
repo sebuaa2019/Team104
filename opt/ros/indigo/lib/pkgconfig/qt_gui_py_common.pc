@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: qt_gui_py_common
+Description: Description of qt_gui_py_common
+Version: 0.2.33
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

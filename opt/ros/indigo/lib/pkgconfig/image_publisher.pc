@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: image_publisher
+Description: Description of image_publisher
+Version: 1.12.23
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

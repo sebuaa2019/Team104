@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: rqt_robot_dashboard
+Version: 0.5.7
+Summary: rqt_robot_dashboard provides an infrastructure for building robot dashboard plugins in rqt.
+Home-page: http://wiki.ros.org/rqt_robot_dashboard
+Author: Aaron Blasdel
+Author-email: ablasdel@gmail.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

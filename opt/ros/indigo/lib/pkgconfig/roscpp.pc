@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: roscpp
+Description: Description of roscpp
+Version: 1.11.21
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lroscpp -lpthread -l:/usr/lib/x86_64-linux-gnu/libboost_signals.so -l:/usr/lib/x86_64-linux-gnu/libboost_filesystem.so -l:/usr/lib/x86_64-linux-gnu/libboost_system.so
+Requires: cpp_common message_runtime rosconsole roscpp_serialization roscpp_traits rosgraph_msgs rostime std_msgs xmlrpcpp

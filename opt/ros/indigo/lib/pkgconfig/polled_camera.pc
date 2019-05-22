@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: polled_camera
+Description: Description of polled_camera
+Version: 1.11.13
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lpolled_camera
+Requires: image_transport message_runtime roscpp sensor_msgs std_msgs

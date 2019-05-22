@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: base_local_planner
+Description: Description of base_local_planner
+Version: 1.12.16
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lbase_local_planner -ltrajectory_planner_ros
+Requires: angles costmap_2d dynamic_reconfigure geometry_msgs message_runtime nav_core nav_msgs pluginlib roscpp std_msgs tf

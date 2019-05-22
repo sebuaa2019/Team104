@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: amcl
+Description: Description of amcl
+Version: 1.12.16
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lamcl_sensors -lamcl_map -lamcl_pf
+Requires: nav_msgs std_srvs

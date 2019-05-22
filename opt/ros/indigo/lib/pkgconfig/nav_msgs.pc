@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: nav_msgs
+Description: Description of nav_msgs
+Version: 1.11.10
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: geometry_msgs message_runtime std_msgs actionlib_msgs

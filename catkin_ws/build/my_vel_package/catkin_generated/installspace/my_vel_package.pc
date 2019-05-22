@@ -1,0 +1,8 @@
+prefix=/home/javiera/catkin_ws/install
+
+Name: my_vel_package
+Description: Description of my_vel_package
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/javiera/catkin_ws/install/lib 
+Requires: 

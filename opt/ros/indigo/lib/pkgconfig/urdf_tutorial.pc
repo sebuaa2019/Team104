@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: urdf_tutorial
+Description: Description of urdf_tutorial
+Version: 0.3.0
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

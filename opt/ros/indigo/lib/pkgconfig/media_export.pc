@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: media_export
+Description: Description of media_export
+Version: 0.2.0
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: gazebo_plugins
+Version: 2.4.16
+Summary: Robot-independent Gazebo plugins for sensors, motors and dynamic reconfigurable components.
+Home-page: http://gazebosim.org/tutorials?cat=connect_ros
+Author: John Hsu
+Author-email: hsu@osrfoundation.org
+License: BSD, Apache 2.0
+Description: UNKNOWN
+Platform: UNKNOWN

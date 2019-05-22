@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: geometric_shapes
+Description: Description of geometric_shapes
+Version: 0.4.6
+Cflags: -I/opt/ros/indigo/include -I/usr/include/eigen3 -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lgeometric_shapes -l:/opt/ros/indigo/lib/liboctomap.so -l:/opt/ros/indigo/lib/liboctomath.so -l:/usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+Requires: eigen_stl_containers random_numbers shape_msgs visualization_msgs

@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: interactive_marker_tutorials
+Description: Description of interactive_marker_tutorials
+Version: 0.9.2
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: interactive_markers roscpp visualization_msgs tf

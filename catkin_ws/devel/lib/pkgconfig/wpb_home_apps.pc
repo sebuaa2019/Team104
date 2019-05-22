@@ -1,0 +1,8 @@
+prefix=/home/javiera/catkin_ws/devel
+
+Name: wpb_home_apps
+Description: Description of wpb_home_apps
+Version: 0.0.0
+Cflags: -I/home/javiera/catkin_ws/src/wpb_home_apps/include
+Libs: -L/home/javiera/catkin_ws/devel/lib 
+Requires: message_runtime

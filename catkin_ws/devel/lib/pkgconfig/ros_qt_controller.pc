@@ -1,0 +1,8 @@
+prefix=/home/javiera/catkin_ws/devel
+
+Name: ros_qt_controller
+Description: Description of ros_qt_controller
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/javiera/catkin_ws/devel/lib 
+Requires: roscpp geometry_msgs

@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: tf_conversions
+Version: 1.11.9
+Summary: This package contains a set of conversion functions to convert
+common tf datatypes (point, vector, pose, etc) into semantically
+identical datatypes used by other libraries. The conversion functions...
+Home-page: http://www.ros.org/wiki/tf_conversions
+Author: Tully Foote
+Author-email: tfoote@osrfoundation.org
+License: BSD
+Description: This package contains a set of conversion functions to convert
+        common tf datatypes (point, vector, pose, etc) into semantically
+        identical datatypes used by other libraries. The conversion functions
+        make it easier for users of the transform library (tf) to work with
+        the datatype of their choice. Currently this package has support for
+        the Kinematics and Dynamics Library (KDL) and the Eigen matrix
+        library. This package is stable, and will get integrated into tf in
+        the next major release cycle (see roadmap).
+Platform: UNKNOWN
+Requires: geometry_msgs
+Requires: rospy
+Requires: tf

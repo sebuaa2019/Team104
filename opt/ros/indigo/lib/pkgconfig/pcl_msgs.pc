@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: pcl_msgs
+Description: Description of pcl_msgs
+Version: 0.2.0
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: message_runtime sensor_msgs std_msgs

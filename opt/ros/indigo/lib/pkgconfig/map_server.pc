@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: map_server
+Description: Description of map_server
+Version: 1.12.16
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -limage_loader
+Requires: roscpp tf nav_msgs

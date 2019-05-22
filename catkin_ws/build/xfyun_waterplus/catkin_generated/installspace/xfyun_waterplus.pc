@@ -1,0 +1,8 @@
+prefix=/home/javiera/catkin_ws/install
+
+Name: xfyun_waterplus
+Description: Description of xfyun_waterplus
+Version: 0.0.0
+Cflags: -I/home/javiera/catkin_ws/install/include
+Libs: -L/home/javiera/catkin_ws/install/lib 
+Requires: message_runtime

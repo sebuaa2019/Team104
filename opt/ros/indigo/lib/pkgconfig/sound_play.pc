@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: sound_play
+Description: Description of sound_play
+Version: 0.2.13
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: message_runtime actionlib_msgs

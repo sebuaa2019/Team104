@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rqt_rviz
+Description: Description of rqt_rviz
+Version: 0.5.10
+Cflags: 
+Libs: -L/opt/ros/indigo/lib -lrqt_rviz
+Requires: rqt_gui rqt_gui_cpp rviz

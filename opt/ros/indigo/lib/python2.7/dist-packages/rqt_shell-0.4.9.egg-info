@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: rqt_shell
+Version: 0.4.9
+Summary: rqt_shell is a Python GUI plugin providing an interactive shell.
+Home-page: http://wiki.ros.org/rqt_shell
+Author: Dorian Scholz <scholz@sim.tu-darmstadt.de>, Kunal Tyagi <kunal_tyagi@yahoo.com>
+Author-email: UNKNOWN
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

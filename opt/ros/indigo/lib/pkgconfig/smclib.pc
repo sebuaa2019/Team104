@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: smclib
+Description: Description of smclib
+Version: 1.7.20
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

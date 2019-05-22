@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: class_loader
+Description: Description of class_loader
+Version: 0.3.9
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lclass_loader -l:/usr/lib/x86_64-linux-gnu/libboost_thread.so -l:/usr/lib/x86_64-linux-gnu/libboost_system.so -l:/usr/lib/x86_64-linux-gnu/libpthread.so -l:/usr/lib/libPocoFoundation.so -ldl -l:/usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+Requires: 

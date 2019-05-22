@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: diagnostic_aggregator
+Description: Description of diagnostic_aggregator
+Version: 1.9.3
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -ldiagnostic_aggregator
+Requires: diagnostic_msgs pluginlib roscpp rospy xmlrpcpp bondcpp

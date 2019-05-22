@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: driver_base
+Description: Description of driver_base
+Version: 1.6.8
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: message_runtime std_msgs

@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: stereo_msgs
+Description: Description of stereo_msgs
+Version: 1.11.10
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: message_runtime sensor_msgs std_msgs

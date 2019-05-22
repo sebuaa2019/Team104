@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: map_msgs
+Description: Description of map_msgs
+Version: 0.0.2
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: std_msgs sensor_msgs nav_msgs

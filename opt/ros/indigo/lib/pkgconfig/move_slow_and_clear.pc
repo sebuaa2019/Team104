@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: move_slow_and_clear
+Description: Description of move_slow_and_clear
+Version: 1.12.16
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lmove_slow_and_clear
+Requires: geometry_msgs nav_core pluginlib roscpp

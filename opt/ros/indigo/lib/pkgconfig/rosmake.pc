@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rosmake
+Description: Description of rosmake
+Version: 1.11.14
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

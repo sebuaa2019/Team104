@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: camera_calibration_parsers
+Description: Description of camera_calibration_parsers
+Version: 1.11.13
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lcamera_calibration_parsers
+Requires: sensor_msgs

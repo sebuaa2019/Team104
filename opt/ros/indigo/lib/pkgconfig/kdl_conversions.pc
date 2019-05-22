@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: kdl_conversions
+Description: Description of kdl_conversions
+Version: 1.11.9
+Cflags: -I/opt/ros/indigo/include -I/usr/include/eigen3
+Libs: -L/opt/ros/indigo/lib -lkdl_conversions -l:/opt/ros/indigo/lib/liborocos-kdl.so.1.3.0
+Requires: geometry_msgs

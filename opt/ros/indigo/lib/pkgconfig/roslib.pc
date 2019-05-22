@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: roslib
+Description: Description of roslib
+Version: 1.11.14
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lroslib
+Requires: rospack

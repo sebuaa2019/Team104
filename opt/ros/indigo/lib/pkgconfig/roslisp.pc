@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: roslisp
+Description: Description of roslisp
+Version: 1.9.21
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

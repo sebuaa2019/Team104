@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rqt_robot_steering
+Description: Description of rqt_robot_steering
+Version: 0.5.9
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

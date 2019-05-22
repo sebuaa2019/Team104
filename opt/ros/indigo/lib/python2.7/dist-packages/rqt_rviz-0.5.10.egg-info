@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: rqt_rviz
+Version: 0.5.10
+Summary: rqt_rviz provides a GUI plugin embedding <a href="http://www.ros.org/wiki/rviz">RViz</a>.
+    Note that this rqt plugin does NOT supersede RViz but depends on it.
+Home-page: http://wiki.ros.org/rqt_rviz
+Author: Louise Poubel
+Author-email: louise@osrfoundation.org
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

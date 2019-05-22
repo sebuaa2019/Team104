@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: python_qt_binding
+Description: Description of python_qt_binding
+Version: 0.2.19
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: tf2_py
+Description: Description of tf2_py
+Version: 0.5.20
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: rospy tf2

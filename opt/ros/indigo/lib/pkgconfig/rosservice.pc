@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rosservice
+Description: Description of rosservice
+Version: 1.11.21
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

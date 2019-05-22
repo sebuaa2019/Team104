@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rqt_image_view
+Description: Description of rqt_image_view
+Version: 0.4.9
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lrqt_image_view
+Requires: rqt_gui rqt_gui_cpp image_transport sensor_msgs cv_bridge geometry_msgs

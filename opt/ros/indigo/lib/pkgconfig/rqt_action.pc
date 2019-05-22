@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rqt_action
+Description: Description of rqt_action
+Version: 0.4.9
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

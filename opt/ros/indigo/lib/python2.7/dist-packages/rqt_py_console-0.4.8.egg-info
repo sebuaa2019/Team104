@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: rqt_py_console
+Version: 0.4.8
+Summary: rqt_py_console is a Python GUI plugin providing an interactive Python console.
+Home-page: http://wiki.ros.org/rqt_py_console
+Author: Dorian Scholz
+Author-email: scholz@sim.tu-darmstadt.de
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

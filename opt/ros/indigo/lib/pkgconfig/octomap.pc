@@ -1,0 +1,10 @@
+prefix=/opt/ros/indigo
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: octomap
+Description: octomap
+Requires: 
+Version: 1.6.9
+Libs: -L${libdir}  -loctomap -loctomath
+Cflags: -I${includedir} 

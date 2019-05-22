@@ -1,0 +1,308 @@
+; Auto-generated. Do not edit!
+
+
+(cl:in-package control_msgs-srv)
+
+
+;//! \htmlinclude QueryTrajectoryState-request.msg.html
+
+(cl:defclass <QueryTrajectoryState-request> (roslisp-msg-protocol:ros-message)
+  ((time
+    :reader time
+    :initarg :time
+    :type cl:real
+    :initform 0))
+)
+
+(cl:defclass QueryTrajectoryState-request (<QueryTrajectoryState-request>)
+  ())
+
+(cl:defmethod cl:initialize-instance :after ((m <QueryTrajectoryState-request>) cl:&rest args)
+  (cl:declare (cl:ignorable args))
+  (cl:unless (cl:typep m 'QueryTrajectoryState-request)
+    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name control_msgs-srv:<QueryTrajectoryState-request> is deprecated: use control_msgs-srv:QueryTrajectoryState-request instead.")))
+
+(cl:ensure-generic-function 'time-val :lambda-list '(m))
+(cl:defmethod time-val ((m <QueryTrajectoryState-request>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader control_msgs-srv:time-val is deprecated.  Use control_msgs-srv:time instead.")
+  (time m))
+(cl:defmethod roslisp-msg-protocol:serialize ((msg <QueryTrajectoryState-request>) ostream)
+  "Serializes a message object of type '<QueryTrajectoryState-request>"
+  (cl:let ((__sec (cl:floor (cl:slot-value msg 'time)))
+        (__nsec (cl:round (cl:* 1e9 (cl:- (cl:slot-value msg 'time) (cl:floor (cl:slot-value msg 'time)))))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __sec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __nsec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __nsec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __nsec) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __nsec) ostream))
+)
+(cl:defmethod roslisp-msg-protocol:deserialize ((msg <QueryTrajectoryState-request>) istream)
+  "Deserializes a message object of type '<QueryTrajectoryState-request>"
+    (cl:let ((__sec 0) (__nsec 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __sec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 0) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __nsec) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'time) (cl:+ (cl:coerce __sec 'cl:double-float) (cl:/ __nsec 1e9))))
+  msg
+)
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<QueryTrajectoryState-request>)))
+  "Returns string type for a service object of type '<QueryTrajectoryState-request>"
+  "control_msgs/QueryTrajectoryStateRequest")
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'QueryTrajectoryState-request)))
+  "Returns string type for a service object of type 'QueryTrajectoryState-request"
+  "control_msgs/QueryTrajectoryStateRequest")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<QueryTrajectoryState-request>)))
+  "Returns md5sum for a message object of type '<QueryTrajectoryState-request>"
+  "ec93cdecbd8062d761aa52b7c90cd44b")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'QueryTrajectoryState-request)))
+  "Returns md5sum for a message object of type 'QueryTrajectoryState-request"
+  "ec93cdecbd8062d761aa52b7c90cd44b")
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<QueryTrajectoryState-request>)))
+  "Returns full string definition for message of type '<QueryTrajectoryState-request>"
+  (cl:format cl:nil "time time~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'QueryTrajectoryState-request)))
+  "Returns full string definition for message of type 'QueryTrajectoryState-request"
+  (cl:format cl:nil "time time~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:serialization-length ((msg <QueryTrajectoryState-request>))
+  (cl:+ 0
+     8
+))
+(cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <QueryTrajectoryState-request>))
+  "Converts a ROS message object to a list"
+  (cl:list 'QueryTrajectoryState-request
+    (cl:cons ':time (time msg))
+))
+;//! \htmlinclude QueryTrajectoryState-response.msg.html
+
+(cl:defclass <QueryTrajectoryState-response> (roslisp-msg-protocol:ros-message)
+  ((name
+    :reader name
+    :initarg :name
+    :type (cl:vector cl:string)
+   :initform (cl:make-array 0 :element-type 'cl:string :initial-element ""))
+   (position
+    :reader position
+    :initarg :position
+    :type (cl:vector cl:float)
+   :initform (cl:make-array 0 :element-type 'cl:float :initial-element 0.0))
+   (velocity
+    :reader velocity
+    :initarg :velocity
+    :type (cl:vector cl:float)
+   :initform (cl:make-array 0 :element-type 'cl:float :initial-element 0.0))
+   (acceleration
+    :reader acceleration
+    :initarg :acceleration
+    :type (cl:vector cl:float)
+   :initform (cl:make-array 0 :element-type 'cl:float :initial-element 0.0)))
+)
+
+(cl:defclass QueryTrajectoryState-response (<QueryTrajectoryState-response>)
+  ())
+
+(cl:defmethod cl:initialize-instance :after ((m <QueryTrajectoryState-response>) cl:&rest args)
+  (cl:declare (cl:ignorable args))
+  (cl:unless (cl:typep m 'QueryTrajectoryState-response)
+    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name control_msgs-srv:<QueryTrajectoryState-response> is deprecated: use control_msgs-srv:QueryTrajectoryState-response instead.")))
+
+(cl:ensure-generic-function 'name-val :lambda-list '(m))
+(cl:defmethod name-val ((m <QueryTrajectoryState-response>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader control_msgs-srv:name-val is deprecated.  Use control_msgs-srv:name instead.")
+  (name m))
+
+(cl:ensure-generic-function 'position-val :lambda-list '(m))
+(cl:defmethod position-val ((m <QueryTrajectoryState-response>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader control_msgs-srv:position-val is deprecated.  Use control_msgs-srv:position instead.")
+  (position m))
+
+(cl:ensure-generic-function 'velocity-val :lambda-list '(m))
+(cl:defmethod velocity-val ((m <QueryTrajectoryState-response>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader control_msgs-srv:velocity-val is deprecated.  Use control_msgs-srv:velocity instead.")
+  (velocity m))
+
+(cl:ensure-generic-function 'acceleration-val :lambda-list '(m))
+(cl:defmethod acceleration-val ((m <QueryTrajectoryState-response>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader control_msgs-srv:acceleration-val is deprecated.  Use control_msgs-srv:acceleration instead.")
+  (acceleration m))
+(cl:defmethod roslisp-msg-protocol:serialize ((msg <QueryTrajectoryState-response>) ostream)
+  "Serializes a message object of type '<QueryTrajectoryState-response>"
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'name))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((__ros_str_len (cl:length ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) ele))
+   (cl:slot-value msg 'name))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'position))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((bits (roslisp-utils:encode-double-float-bits ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream)))
+   (cl:slot-value msg 'position))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'velocity))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((bits (roslisp-utils:encode-double-float-bits ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream)))
+   (cl:slot-value msg 'velocity))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'acceleration))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((bits (roslisp-utils:encode-double-float-bits ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream)))
+   (cl:slot-value msg 'acceleration))
+)
+(cl:defmethod roslisp-msg-protocol:deserialize ((msg <QueryTrajectoryState-response>) istream)
+  "Deserializes a message object of type '<QueryTrajectoryState-response>"
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'name) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'name)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((__ros_str_len 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) __ros_str_len) (cl:read-byte istream))
+      (cl:setf (cl:aref vals i) (cl:make-string __ros_str_len))
+      (cl:dotimes (__ros_str_idx __ros_str_len msg)
+        (cl:setf (cl:char (cl:aref vals i) __ros_str_idx) (cl:code-char (cl:read-byte istream))))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'position) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'position)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:aref vals i) (roslisp-utils:decode-double-float-bits bits))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'velocity) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'velocity)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:aref vals i) (roslisp-utils:decode-double-float-bits bits))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'acceleration) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'acceleration)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:aref vals i) (roslisp-utils:decode-double-float-bits bits))))))
+  msg
+)
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<QueryTrajectoryState-response>)))
+  "Returns string type for a service object of type '<QueryTrajectoryState-response>"
+  "control_msgs/QueryTrajectoryStateResponse")
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'QueryTrajectoryState-response)))
+  "Returns string type for a service object of type 'QueryTrajectoryState-response"
+  "control_msgs/QueryTrajectoryStateResponse")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<QueryTrajectoryState-response>)))
+  "Returns md5sum for a message object of type '<QueryTrajectoryState-response>"
+  "ec93cdecbd8062d761aa52b7c90cd44b")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'QueryTrajectoryState-response)))
+  "Returns md5sum for a message object of type 'QueryTrajectoryState-response"
+  "ec93cdecbd8062d761aa52b7c90cd44b")
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<QueryTrajectoryState-response>)))
+  "Returns full string definition for message of type '<QueryTrajectoryState-response>"
+  (cl:format cl:nil "string[] name~%float64[] position~%float64[] velocity~%float64[] acceleration~%~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'QueryTrajectoryState-response)))
+  "Returns full string definition for message of type 'QueryTrajectoryState-response"
+  (cl:format cl:nil "string[] name~%float64[] position~%float64[] velocity~%float64[] acceleration~%~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:serialization-length ((msg <QueryTrajectoryState-response>))
+  (cl:+ 0
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'name) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4 (cl:length ele))))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'position) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 8)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'velocity) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 8)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'acceleration) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 8)))
+))
+(cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <QueryTrajectoryState-response>))
+  "Converts a ROS message object to a list"
+  (cl:list 'QueryTrajectoryState-response
+    (cl:cons ':name (name msg))
+    (cl:cons ':position (position msg))
+    (cl:cons ':velocity (velocity msg))
+    (cl:cons ':acceleration (acceleration msg))
+))
+(cl:defmethod roslisp-msg-protocol:service-request-type ((msg (cl:eql 'QueryTrajectoryState)))
+  'QueryTrajectoryState-request)
+(cl:defmethod roslisp-msg-protocol:service-response-type ((msg (cl:eql 'QueryTrajectoryState)))
+  'QueryTrajectoryState-response)
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'QueryTrajectoryState)))
+  "Returns string type for a service object of type '<QueryTrajectoryState>"
+  "control_msgs/QueryTrajectoryState")

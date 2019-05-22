@@ -1,0 +1,6 @@
+-DROS_BUILD_SHARED_LIBS=1
+-DROS_PACKAGE_NAME="ros_qt_controller"
+-DROSCONSOLE_BACKEND_LOG4CXX
+-o
+/home/javiera/catkin_ws/build/ros-qt-controller/src/moc_RobotThread.cpp
+/home/javiera/catkin_ws/src/ros-qt-controller/src/RobotThread.h

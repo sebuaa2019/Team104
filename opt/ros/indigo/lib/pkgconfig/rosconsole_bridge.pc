@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rosconsole_bridge
+Description: Description of rosconsole_bridge
+Version: 0.4.4
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lrosconsole_bridge -l:/usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+Requires: rosconsole

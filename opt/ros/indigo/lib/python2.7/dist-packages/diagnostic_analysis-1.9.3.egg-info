@@ -1,0 +1,14 @@
+Metadata-Version: 1.0
+Name: diagnostic_analysis
+Version: 1.9.3
+Summary: The diagnostic_analysis package can convert a log of diagnostics data
+    into a series of CSV files. Robot logs are recorded with rosbag, and
+    can be processed offline using the scripts in this...
+Home-page: http://www.ros.org/wiki/diagnostics_analysis
+Author: Austin Hendrix <namniart@gmail.com>, Brice Rebsamen <brice.rebsamen@gmail.com>
+Author-email: UNKNOWN
+License: BSD
+Description: The diagnostic_analysis package can convert a log of diagnostics data
+            into a series of CSV files. Robot logs are recorded with rosbag, and
+            can be processed offline using the scripts in this package.
+Platform: UNKNOWN

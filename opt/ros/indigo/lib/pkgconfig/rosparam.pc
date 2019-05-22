@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rosparam
+Description: Description of rosparam
+Version: 1.11.21
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

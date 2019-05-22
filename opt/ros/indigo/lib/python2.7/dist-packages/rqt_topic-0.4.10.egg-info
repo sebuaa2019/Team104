@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: rqt_topic
+Version: 0.4.10
+Summary: rqt_topic provides a GUI plugin for displaying debug information about ROS topics including publishers, subscribers, publishing rate, and ROS Messages.
+Home-page: http://wiki.ros.org/rqt_topic
+Author: Dirk Thomas <dthomas@osrfoundation.org>, Dorian Scholz <scholz@sim.tu-darmstadt.de>
+Author-email: UNKNOWN
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

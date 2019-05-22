@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: genlisp
+Description: Description of genlisp
+Version: 0.4.15
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: genmsg

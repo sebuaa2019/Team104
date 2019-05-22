@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: joint_state_publisher
+Description: Description of joint_state_publisher
+Version: 1.11.15
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

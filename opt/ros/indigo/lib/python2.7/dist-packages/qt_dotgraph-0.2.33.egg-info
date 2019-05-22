@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: qt_dotgraph
+Version: 0.2.33
+Summary: qt_dotgraph provides helpers to work with dot graphs.
+Home-page: http://ros.org/wiki/qt_dotgraph
+Author: Dirk Thomas
+Author-email: dthomas@osrfoundation.org
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

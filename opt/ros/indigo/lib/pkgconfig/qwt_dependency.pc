@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: qwt_dependency
+Description: Description of qwt_dependency
+Version: 1.0.1
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

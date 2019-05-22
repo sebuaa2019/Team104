@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: turtle_tf
+Description: Description of turtle_tf
+Version: 0.2.2
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: geometry_msgs roscpp rospy std_msgs tf turtlesim

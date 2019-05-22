@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: move_base
+Description: Description of move_base
+Version: 1.12.16
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: dynamic_reconfigure geometry_msgs move_base_msgs nav_msgs roscpp

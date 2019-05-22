@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: roscreate
+Description: Description of roscreate
+Version: 1.11.14
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

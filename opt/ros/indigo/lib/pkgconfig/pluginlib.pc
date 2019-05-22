@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: pluginlib
+Description: Description of pluginlib
+Version: 1.10.7
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -l:/usr/lib/x86_64-linux-gnu/libboost_filesystem.so -l:/usr/lib/x86_64-linux-gnu/libboost_system.so -l:/usr/lib/x86_64-linux-gnu/libtinyxml.so
+Requires: class_loader rosconsole roslib

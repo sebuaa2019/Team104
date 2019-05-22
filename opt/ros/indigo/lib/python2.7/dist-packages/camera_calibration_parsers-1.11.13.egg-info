@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: camera_calibration_parsers
+Version: 1.11.13
+Summary: camera_calibration_parsers contains routines for reading and writing camera calibration parameters.
+Home-page: http://ros.org/wiki/camera_calibration_parsers
+Author: Jack O'Quin <jack.oquin@gmail.com>, Vincent Rabaud <vincent.rabaud@gmail.com>
+Author-email: UNKNOWN
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

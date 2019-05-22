@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: urdf_parser_plugin
+Description: Description of urdf_parser_plugin
+Version: 1.11.15
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

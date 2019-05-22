@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: rqt_image_view
+Version: 0.4.9
+Summary: rqt_image_view provides a GUI plugin for displaying images using image_transport.
+Home-page: http://wiki.ros.org/rqt_image_view
+Author: Dirk Thomas <dthomas@osrfoundation.org>, Aaron Blasdel <ablasdel@gmail.com>
+Author-email: UNKNOWN
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

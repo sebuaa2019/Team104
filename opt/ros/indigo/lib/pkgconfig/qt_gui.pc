@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: qt_gui
+Description: Description of qt_gui
+Version: 0.2.33
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: qt_gui_cpp
+Description: Description of qt_gui_cpp
+Version: 0.2.33
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lqt_gui_cpp -l:/usr/lib/x86_64-linux-gnu/libboost_filesystem.so -l:/usr/lib/x86_64-linux-gnu/libboost_system.so
+Requires: pluginlib

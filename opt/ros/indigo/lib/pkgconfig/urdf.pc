@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: urdf
+Description: Description of urdf
+Version: 1.11.15
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lurdf -l:/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so -l:/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so -l:/usr/lib/x86_64-linux-gnu/liburdfdom_model.so -l:/usr/lib/x86_64-linux-gnu/liburdfdom_world.so -l:/usr/lib/x86_64-linux-gnu/libconsole_bridge.so -l:/usr/lib/x86_64-linux-gnu/libboost_thread.so -l:/usr/lib/x86_64-linux-gnu/libpthread.so -l:/usr/lib/x86_64-linux-gnu/libtinyxml.so
+Requires: rosconsole_bridge roscpp

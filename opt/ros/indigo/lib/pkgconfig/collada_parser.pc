@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: collada_parser
+Description: Description of collada_parser
+Version: 1.11.14
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lcollada_parser
+Requires: roscpp urdf_parser_plugin

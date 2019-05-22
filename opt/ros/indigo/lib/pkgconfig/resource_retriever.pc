@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: resource_retriever
+Description: Description of resource_retriever
+Version: 1.11.8
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lresource_retriever
+Requires: 

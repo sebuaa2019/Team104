@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: laser_assembler
+Description: Description of laser_assembler
+Version: 1.7.3
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: tf sensor_msgs message_filters roscpp laser_geometry filters message_runtime

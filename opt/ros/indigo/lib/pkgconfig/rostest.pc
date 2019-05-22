@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rostest
+Description: Description of rostest
+Version: 1.11.21
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -l:/usr/lib/x86_64-linux-gnu/libboost_system.so -l:/usr/lib/x86_64-linux-gnu/libboost_thread.so -l:/usr/lib/x86_64-linux-gnu/libpthread.so
+Requires: 

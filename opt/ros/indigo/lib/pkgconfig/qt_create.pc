@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: qt_create
+Description: Description of qt_create
+Version: 0.2.9
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

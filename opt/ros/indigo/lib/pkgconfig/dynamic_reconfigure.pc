@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: dynamic_reconfigure
+Description: Description of dynamic_reconfigure
+Version: 1.5.50
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -ldynamic_reconfigure_config_init_mutex
+Requires: message_runtime std_msgs

@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: stage_ros
+Description: Description of stage_ros
+Version: 1.7.5
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

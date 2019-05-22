@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: nav_core
+Description: Description of nav_core
+Version: 1.12.16
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: std_msgs geometry_msgs tf costmap_2d

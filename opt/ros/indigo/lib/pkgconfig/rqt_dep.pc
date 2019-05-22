@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rqt_dep
+Description: Description of rqt_dep
+Version: 0.4.9
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

@@ -1,0 +1,23 @@
+Metadata-Version: 1.0
+Name: rqt_reconfigure
+Version: 0.4.10
+Summary: This rqt plugin succeeds former dynamic_reconfigure's GUI
+		(reconfigure_gui), and provides the way to view and edit the parameters
+		that are accessible via dynamic_reconfigure.<br/>
+		<br/>
+		(12...
+Home-page: http://wiki.ros.org/rqt_reconfigure
+Author: Scott K Logan
+Author-email: logans@cottsay.net
+License: BSD
+Description: This rqt plugin succeeds former dynamic_reconfigure's GUI
+        		(reconfigure_gui), and provides the way to view and edit the parameters
+        		that are accessible via dynamic_reconfigure.<br/>
+        		<br/>
+        		(12/27/2012) In the future, arbitrary parameters that are not associated
+        		with any nodes (which are not handled by dynamic_reconfigure) might
+        		become handled.
+        		However, currently as the name indicates, this pkg solely is dependent
+        		on dynamic_reconfigure that allows access to only those params latched
+        		to nodes.
+Platform: UNKNOWN

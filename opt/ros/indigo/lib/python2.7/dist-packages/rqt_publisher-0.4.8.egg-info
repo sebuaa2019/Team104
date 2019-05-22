@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: rqt_publisher
+Version: 0.4.8
+Summary: rqt_publisher provides a GUI plugin for publishing arbitrary messages with fixed or computed field values.
+Home-page: http://wiki.ros.org/rqt_publisher
+Author: Dirk Thomas <dthomas@osrfoundation.org>, Dorian Scholz <scholz@sim.tu-darmstadt.de>
+Author-email: UNKNOWN
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

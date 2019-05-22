@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: actionlib
+Description: Description of actionlib
+Version: 1.11.13
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lactionlib -l:/usr/lib/x86_64-linux-gnu/libboost_thread.so -l:/usr/lib/x86_64-linux-gnu/libpthread.so
+Requires: actionlib_msgs message_runtime roscpp std_msgs

@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: image_transport
+Description: Description of image_transport
+Version: 1.11.13
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -limage_transport
+Requires: message_filters pluginlib rosconsole roscpp roslib sensor_msgs

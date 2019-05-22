@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: tf2_msgs
+Description: Description of tf2_msgs
+Version: 0.5.20
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: message_generation geometry_msgs actionlib_msgs

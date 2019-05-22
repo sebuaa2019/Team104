@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rqt_py_common
+Description: Description of rqt_py_common
+Version: 0.4.8
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

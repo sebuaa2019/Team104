@@ -1,0 +1,13 @@
+Metadata-Version: 1.0
+Name: roslint
+Version: 0.10.0
+Summary: CMake lint commands for ROS packages.
+
+    The lint commands perform static checking of Python or C++ source
+    code for errors and standards compliance.
+Home-page: http://ros.org/wiki/roslint
+Author: Mike Purvis
+Author-email: mpurvis@clearpathrobotics.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

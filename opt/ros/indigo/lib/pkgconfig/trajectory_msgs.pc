@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: trajectory_msgs
+Description: Description of trajectory_msgs
+Version: 1.11.10
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: message_runtime std_msgs geometry_msgs

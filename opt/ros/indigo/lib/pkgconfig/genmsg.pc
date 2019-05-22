@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: genmsg
+Description: Description of genmsg
+Version: 0.5.8
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

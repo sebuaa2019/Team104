@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: interactive_markers
+Description: Description of interactive_markers
+Version: 1.11.4
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -linteractive_markers
+Requires: roscpp rosconsole rospy tf visualization_msgs

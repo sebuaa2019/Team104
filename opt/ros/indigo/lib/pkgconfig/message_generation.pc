@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: message_generation
+Description: Description of message_generation
+Version: 0.2.10
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: gencpp genlisp genmsg genpy

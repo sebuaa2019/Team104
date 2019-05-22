@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: bondcpp
+Description: Description of bondcpp
+Version: 1.7.20
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lbondcpp -l:/usr/lib/x86_64-linux-gnu/libuuid.so
+Requires: bond roscpp smclib

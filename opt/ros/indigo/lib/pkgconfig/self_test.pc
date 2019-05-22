@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: self_test
+Description: Description of self_test
+Version: 1.9.3
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: diagnostic_msgs diagnostic_updater roscpp

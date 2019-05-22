@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: robot_pose_ekf
+Description: Description of robot_pose_ekf
+Version: 1.12.16
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: geometry_msgs message_runtime nav_msgs roscpp sensor_msgs std_msgs

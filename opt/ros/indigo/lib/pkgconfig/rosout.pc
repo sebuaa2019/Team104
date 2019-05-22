@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rosout
+Description: Description of rosout
+Version: 1.11.21
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

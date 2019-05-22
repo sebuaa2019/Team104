@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: bondpy
+Description: Description of bondpy
+Version: 1.7.20
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

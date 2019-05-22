@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: qt_build
+Description: Description of qt_build
+Version: 0.2.9
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

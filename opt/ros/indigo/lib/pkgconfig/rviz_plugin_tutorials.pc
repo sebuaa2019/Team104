@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rviz_plugin_tutorials
+Description: Description of rviz_plugin_tutorials
+Version: 0.9.2
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

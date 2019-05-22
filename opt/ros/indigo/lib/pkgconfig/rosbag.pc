@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rosbag
+Description: Description of rosbag
+Version: 1.11.21
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lrosbag
+Requires: rosbag_storage rosconsole roscpp topic_tools xmlrpcpp

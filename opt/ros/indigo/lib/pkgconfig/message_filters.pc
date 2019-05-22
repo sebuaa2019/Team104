@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: message_filters
+Description: Description of message_filters
+Version: 1.11.21
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lmessage_filters
+Requires: roscpp xmlrpcpp rosconsole

@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rospy_tutorials
+Description: Description of rospy_tutorials
+Version: 0.5.5
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: message_runtime std_msgs

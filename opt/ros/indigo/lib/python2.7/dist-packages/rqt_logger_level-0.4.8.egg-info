@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: rqt_logger_level
+Version: 0.4.8
+Summary: rqt_logger_level provides a GUI plugin for configuring the logger level of ROS nodes.<br/>
+   <br/>
+  rqt_logger_level takes over `wx`-based tool [[rxloggerlevel]].
+Home-page: http://wiki.ros.org/rqt_logger_level
+Author: Dirk Thomas <dthomas@osrfoundation.org>, Aaron Blasdel <ablasdel@gmail.com>
+Author-email: UNKNOWN
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

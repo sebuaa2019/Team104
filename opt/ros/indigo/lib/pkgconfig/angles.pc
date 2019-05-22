@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: angles
+Description: Description of angles
+Version: 1.9.11
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

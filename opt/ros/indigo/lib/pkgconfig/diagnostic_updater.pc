@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: diagnostic_updater
+Description: Description of diagnostic_updater
+Version: 1.9.3
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: diagnostic_msgs roscpp std_msgs

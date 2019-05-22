@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: turtlesim
+Description: Description of turtlesim
+Version: 0.5.5
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: geometry_msgs message_runtime std_msgs std_srvs

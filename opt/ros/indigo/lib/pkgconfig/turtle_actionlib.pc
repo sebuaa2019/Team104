@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: turtle_actionlib
+Description: Description of turtle_actionlib
+Version: 0.1.10
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

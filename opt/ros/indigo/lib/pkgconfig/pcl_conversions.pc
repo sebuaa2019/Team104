@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: pcl_conversions
+Description: Description of pcl_conversions
+Version: 0.2.1
+Cflags: -I/opt/ros/indigo/include -I/usr/include/eigen3 -I/usr/include -I/usr/include/pcl-1.7
+Libs: -L/opt/ros/indigo/lib 
+Requires: pcl_msgs roscpp sensor_msgs std_msgs

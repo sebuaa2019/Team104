@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: roscpp_traits
+Description: Description of roscpp_traits
+Version: 0.5.8
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: cpp_common rostime

@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: geometry_msgs
+Description: Description of geometry_msgs
+Version: 1.11.10
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib 
+Requires: message_runtime std_msgs

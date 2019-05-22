@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: qt_create
+Version: 0.2.9
+Summary: Provides templates and scripts for creating qt-ros packages
+     (similar to roscreate-pkg).
+Home-page: https://github.com/stonier/qt_ros/issues
+Author: Daniel Stonier
+Author-email: d.stonier@gmail.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

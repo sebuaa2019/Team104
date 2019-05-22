@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: gl_dependency
+Description: Description of gl_dependency
+Version: 1.0.0
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rqt_pose_view
+Description: Description of rqt_pose_view
+Version: 0.5.8
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

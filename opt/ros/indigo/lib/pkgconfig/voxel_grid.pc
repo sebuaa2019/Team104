@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: voxel_grid
+Description: Description of voxel_grid
+Version: 1.12.16
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lvoxel_grid
+Requires: roscpp

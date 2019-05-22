@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rqt_tf_tree
+Description: Description of rqt_tf_tree
+Version: 0.6.0
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

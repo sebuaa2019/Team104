@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: nodelet
+Description: Description of nodelet
+Version: 1.9.14
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lnodeletlib -l:/usr/lib/x86_64-linux-gnu/libuuid.so
+Requires: bondcpp message_runtime pluginlib rosconsole roscpp std_msgs

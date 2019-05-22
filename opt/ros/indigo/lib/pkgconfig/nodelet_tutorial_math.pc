@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: nodelet_tutorial_math
+Description: Description of nodelet_tutorial_math
+Version: 0.1.10
+Cflags: 
+Libs: -L/opt/ros/indigo/lib -lnodelet_math
+Requires: nodelet roscpp std_msgs

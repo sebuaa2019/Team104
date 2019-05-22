@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: rqt_runtime_monitor
+Version: 0.5.7
+Summary: rqt_runtime_monitor provides a GUI plugin viewing DiagnosticsArray messages.
+Home-page: http://wiki.ros.org/rqt_runtime_monitor
+Author: Aaron Blasdel
+Author-email: ablasdel@gmail.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

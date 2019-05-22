@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: rqt_service_caller
+Version: 0.4.8
+Summary: rqt_service_caller provides a GUI plugin for calling arbitrary services.
+Home-page: http://wiki.ros.org/rqt_service_caller
+Author: Dirk Thomas <dthomas@osrfoundation.org>, Dorian Scholz <scholz@sim.tu-darmstadt.de>
+Author-email: UNKNOWN
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

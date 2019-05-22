@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: joy
+Description: Description of joy
+Version: 1.12.0
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: roscpp diagnostic_updater sensor_msgs

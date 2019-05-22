@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: gazebo_ros
+Description: Description of gazebo_ros
+Version: 2.4.16
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lgazebo_ros_api_plugin -lgazebo_ros_paths_plugin -l:/usr/lib/x86_64-linux-gnu/libtinyxml.so
+Requires: roslib roscpp geometry_msgs std_srvs tf rosgraph_msgs dynamic_reconfigure message_generation std_msgs gazebo_msgs

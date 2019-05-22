@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: mk
+Description: Description of mk
+Version: 1.11.14
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

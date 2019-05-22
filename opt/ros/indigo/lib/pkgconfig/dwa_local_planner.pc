@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: dwa_local_planner
+Description: Description of dwa_local_planner
+Version: 1.12.16
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -ldwa_local_planner
+Requires: dynamic_reconfigure nav_msgs pluginlib roscpp

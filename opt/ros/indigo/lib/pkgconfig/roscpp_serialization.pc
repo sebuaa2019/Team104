@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: roscpp_serialization
+Description: Description of roscpp_serialization
+Version: 0.5.8
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lroscpp_serialization
+Requires: cpp_common roscpp_traits rostime

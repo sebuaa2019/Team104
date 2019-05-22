@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rosnode
+Description: Description of rosnode
+Version: 1.11.21
+Cflags: 
+Libs: -L/opt/ros/indigo/lib 
+Requires: 

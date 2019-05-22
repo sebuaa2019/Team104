@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: filters
+Description: Description of filters
+Version: 1.7.5
+Cflags: -I/opt/ros/indigo/include
+Libs: -L/opt/ros/indigo/lib -lmean -lparams -lincrement -lmedian -ltransfer_function
+Requires: roslib roscpp rosconsole pluginlib

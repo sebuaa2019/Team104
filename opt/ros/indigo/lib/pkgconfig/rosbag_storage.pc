@@ -1,0 +1,8 @@
+prefix=/opt/ros/indigo
+
+Name: rosbag_storage
+Description: Description of rosbag_storage
+Version: 1.11.21
+Cflags: -I/opt/ros/indigo/include -I/usr/include
+Libs: -L/opt/ros/indigo/lib -lrosbag_storage -l:/usr/lib/x86_64-linux-gnu/libconsole_bridge.so -l:/usr/lib/x86_64-linux-gnu/libboost_date_time.so -l:/usr/lib/x86_64-linux-gnu/libboost_filesystem.so -l:/usr/lib/x86_64-linux-gnu/libboost_program_options.so -l:/usr/lib/x86_64-linux-gnu/libboost_regex.so
+Requires: roslz4

@@ -13,7 +13,6 @@
 #include <QApplication>
 #include <QProcess>
 #include "../include/rosvis/main_window.hpp"
-#include <ros/ros.h>
 
 /*****************************************************************************
 ** Main
@@ -21,13 +20,8 @@
 
 int main(int argc, char **argv) {
 
-    if(!ros::isInitialized())
-    {
-      ros::init(argc, argv, "rosvis", ros::init_options::AnonymousName);
-    }
-
-    QProcess builder;
-    builder.start("bash", QStringList() << "-c" << "roslaunch wpb_home_apps shopping.launch");
+    QProcess *builder = new QProcess();
+    //builder->start("bash", QStringList() << "-c" << "roslaunch wpb_home_apps shopping.launch");
     /*********************
     ** Qt
     **********************/

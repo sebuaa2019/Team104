@@ -16,6 +16,8 @@ public:
   explicit RobotControl(QWidget *parent = 0);
   ~RobotControl();
   void writeToFile(const QString& stat);
+  void enableButton();
+  void disableButton();
 
 public Q_SLOTS:
   void on_yButton_clicked();
@@ -29,6 +31,8 @@ public Q_SLOTS:
   void on_lButton_clicked();
 
   void on_rButton_clicked();
+
+  void on_buyButton_clicked();
 
   void updatePic();
 

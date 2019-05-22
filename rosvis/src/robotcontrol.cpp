@@ -1,7 +1,6 @@
 #include "../include/rosvis/robotcontrol.hpp"
+#include "../include/rosvis/buyproduct.hpp"
 #include "ui_robotcontrol.h"
-#include <iostream>
-#include <fstream>
 #include <QFile>
 #include <QTextStream>
 #include <QDir>
@@ -14,11 +13,11 @@ RobotControl::RobotControl(QWidget *parent) :
 {
   ui->setupUi(this);
 
-  QPixmap mapPic ("/home/robot/team104_temp/image.bmp");
+  QPixmap mapPic ("/home/robot/team104_temp/image.png");
   ui->pic->setPixmap(mapPic);
   QTimer *timer = new QTimer(this);
   QObject::connect(timer, SIGNAL(timeout()), this, SLOT(updatePic()));
-  timer->start(100);
+  timer->start(1000);
 }
 
 RobotControl::~RobotControl()
@@ -26,9 +25,29 @@ RobotControl::~RobotControl()
   delete ui;
 }
 
+void RobotControl::enableButton()
+{
+  ui->xButton->setEnabled(true);
+  ui->yButton->setEnabled(true);
+  ui->aButton->setEnabled(true);
+  ui->bButton->setEnabled(true);
+  ui->lButton->setEnabled(true);
+  ui->rButton->setEnabled(true);
+}
+
+void RobotControl::disableButton()
+{
+  ui->xButton->setEnabled(false);
+  ui->yButton->setEnabled(false);
+  ui->aButton->setEnabled(false);
+  ui->bButton->setEnabled(false);
+  ui->lButton->setEnabled(false);
+  ui->rButton->setEnabled(false);
+}
+
 void RobotControl::updatePic()
 {
-  QPixmap mapPic ("/home/robot/team104_temp/image.bmp");
+  QPixmap mapPic ("/home/robot/team104_temp/image.png");
   ui->pic->setPixmap(mapPic);
   ui->pic->repaint();
 }
@@ -52,42 +71,67 @@ void RobotControl::writeToFile(const QString& stat)
 
 void RobotControl::on_yButton_clicked()
 {
-  writeToFile("0");
-  QProcess builder;
-  builder.start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_forward");
+  disableButton();
+  QProcess *builder = new QProcess();
+  builder->start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_forward");
+  builder->waitForFinished(-1);
+  delete builder;
+  enableButton();
 }
 
 void RobotControl::on_xButton_clicked()
 {
-  writeToFile("2");
-  QProcess builder;
-  builder.start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_left");
+  disableButton();
+  QProcess *builder = new QProcess();
+  builder->start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_left");
+  builder->waitForFinished(-1);
+  delete builder;
+  enableButton();
 }
 
 void RobotControl::on_bButton_clicked()
 {
-  writeToFile("3");
-  QProcess builder;
-  builder.start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_right");
+  disableButton();
+  QProcess *builder = new QProcess();
+  builder->start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_right");
+  builder->waitForFinished(-1);
+  delete builder;
+  enableButton();
 }
 
 void RobotControl::on_aButton_clicked()
 {
-  writeToFile("1");
-  QProcess builder;
-  builder.start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_backward");
+  disableButton();
+  QProcess *builder = new QProcess();
+  builder->start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_backward");
+  builder->waitForFinished(-1);
+  delete builder;
+  enableButton();
 }
 
 void RobotControl::on_lButton_clicked()
 {
-  writeToFile("4");
-  QProcess builder;
-  builder.start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_turnleft");
+  disableButton();
+  QProcess *builder = new QProcess();
+  builder->start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_turnleft");
+  builder->waitForFinished(-1);
+  delete builder;
+  enableButton();
 }
 
 void RobotControl::on_rButton_clicked()
 {
-  writeToFile("5");
-  QProcess builder;
-  builder.start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_turnright");
+  disableButton();
+  QProcess *builder = new QProcess();
+  builder->start("bash", QStringList() << "-c" << "rosrun my_vel_package vel_turnright");
+  builder->waitForFinished(-1);
+  delete builder;
+  enableButton();
+}
+
+void RobotControl::on_buyButton_clicked()
+{
+  BuyProduct buyProduct;
+  buyProduct.setModal(true);
+  buyProduct.exec();
 }

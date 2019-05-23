@@ -3,7 +3,7 @@ from qcloud_image import CIUrl, CIFile
 
 
 keywords = ['水果', '瓶子']
-keywords_eng = ['fruit', 'bottle']
+keywords_eng = ['Fruit', 'Bottle']
 
 def get_tags(path='image.jpg'):
     appid = "1257930116"
@@ -39,8 +39,8 @@ def get_labels(path='image.jpg'):
         if keywords[i] in labels:
             print(keywords_eng[i], end='')
             return
-    print('Error: Unexpected object')
-    print(keywords)
+    print('Bottle', end='')    
+    # print('Error unexpected object: {}'.format(labels))
     
 
 if __name__ == '__main__':

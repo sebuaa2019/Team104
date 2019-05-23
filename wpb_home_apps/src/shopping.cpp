@@ -105,8 +105,8 @@ void InitKeyword()
     arKeyword.push_back("start");   //机器人开始启动的地点,最后要回去
     arKeyword.push_back("record");
     arKeyword.push_back("Record");
-    arKeyword.push_back("fruit");
-    arKeyword.push_back("bottle");
+    arKeyword.push_back("Fruit");
+    arKeyword.push_back("Bottle");
 }
 
 // 从句子里找arKeyword里存在的关键词
@@ -229,8 +229,8 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
             fgets(keyword, sizeof(keyword), python_exec);
             // 发现物品（航点）关键词
             string objectName(keyword);
-	        cout << "[[[" << objectName << "]]]" << endl;
-            if (objectName != "fruit")
+            ROS_WARN("[[[%s]]]", objectName.c_str());
+            if (objectName != "Fruit" && objectName != "Bottle")
             {
 	            string strSpeak = "Unexpected object or error, try again, please"; 
 	            Speak(strSpeak);
@@ -248,7 +248,7 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
         {
             FollowSwitch(false, 0);
             AddNewWaypoint("master");
-            // nState = STATE_ASK;
+        //     // nState = STATE_ASK;
             nState = STATE_WAIT;
             nDelay = 0;
         }
@@ -273,7 +273,6 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
 
 void ProcColorCB(const sensor_msgs::ImageConstPtr& msg)
 {
-    static int count = 0;
     //ROS_INFO("ProcColorCB");
     cv_bridge::CvImagePtr cv_ptr;
     try
@@ -286,17 +285,8 @@ void ProcColorCB(const sensor_msgs::ImageConstPtr& msg)
         return;
     }
     int res = imwrite("/home/robot/team104_temp/image.bmp",cv_ptr->image);
-   
-    if (count == 0)
-    {
-        cout << cv_ptr->image.size() << endl;
-        cout << "Image saved" << endl;
-    }
-    if (res == 0)
-    {
-        cout << "Imwrite failed." << endl;
-        cout << cv_ptr->image << endl;
-    }
+    // cout << "XXXXXXXXXXXXXXXXXX" << endl;
+    // cout << res << endl;
 }
 
 // 物品抓取状态
@@ -351,6 +341,7 @@ int main(int argc, char** argv)
     {
         if (nState == STATE_WAIT)
         {
+            int count = 0;
             ifstream in("/home/robot/team104_temp/status.txt");
             if (in.is_open())
             { 
@@ -358,18 +349,18 @@ int main(int argc, char** argv)
                 {
                     char buffer[20];
                     in >> buffer;
-                    if (buffer[0] == '1')
+                    if (buffer[0] == '1' && count == 0)
                     {
                         nState = STATE_FOLLOW;
                         Speak("SLAM ON");
-                        cout << "SLAM ON" << endl;
-                        
+                        ROS_WARN("SLAM ON");          
+                        count++;              
                     }
                     else if (buffer[0] == '2')
                     {
                         nState = STATE_ASK;
                         Speak("OK. What do you want me to fetch?");
-                        cout << "ASK" << endl;
+                        ROS_WARN("ASK");
                     }
                 }    
             }

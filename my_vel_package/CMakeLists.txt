@@ -196,12 +196,4 @@ include_directories(
 # endif()
 
 ## Add folders to be run by python nosetests
-# catkin_add_nosetests(test)
-
-add_executable(vel_ctrl
-  src/vel_ctrl.cpp
-)
-add_dependencies(vel_ctrl ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(vel_ctrl
-  ${catkin_LIBRARIES}
-)
+# catkin_add_nosetests(test)

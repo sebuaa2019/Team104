@@ -48,7 +48,7 @@ class ImageRecognition:
             if label in keywords:
                 index = keywords.index(label)
                 labels.append(keywords_eng[index])
-        return labels
+        return labels, tags
 
     def image_partition(self):
         filenames = []
@@ -77,19 +77,29 @@ class ImageRecognition:
 
         return filenames
 
+    def return_res(self, result):
+        filename = pjoin(self.folder, 'IR_res.txt')
+        with open(filename, 'w') as file:
+            file.writelines(result)
+
     def __call__(self):
-        labels = self.get_labels(self.path)
-        # print(labels)
-        if len(labels) > 10:
-            print(labels[0], end='')
+        labels, tags = self.get_labels(self.path)
+        print(labels)
+        if len(labels) > 0:
+            # print(labels[0], end='')
+            self.return_res(labels[0])
         else:
             filenames = self.image_partition()
-            for filename in filenames:
-                labels = self.get_labels(filename)
-                # print(filename, labels)
+            for i in range(len(filenames)):
+                filename = filenames[i]
+                labels, _ = self.get_labels(filename)
+                print(i, labels)
                 if len(labels) != 0:
-                    print(labels[0], end='')
+                    # print(labels[0], end='')
+                    self.return_res(labels[0])
                     return
+            print(tags)
+            self.return_res('Unknown')
     
 
 if __name__ == '__main__':

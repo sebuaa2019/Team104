@@ -105,8 +105,6 @@ void InitKeyword()
     arKeyword.push_back("start");   //机器人开始启动的地点,最后要回去
     arKeyword.push_back("record");
     arKeyword.push_back("Record");
-    arKeyword.push_back("Fruit");
-    arKeyword.push_back("Bottle");
 }
 
 // 从句子里找arKeyword里存在的关键词
@@ -217,6 +215,7 @@ static void PassSwitch(bool inActive)
 void KeywordCB(const std_msgs::String::ConstPtr & msg)
 {
     ROS_WARN("------ Keyword = %s ------",msg->data.c_str());
+    static int failCount = 0;
     if(nState == STATE_FOLLOW)
     {
         // 从识别结果句子中查找物品（航点）关键词
@@ -225,20 +224,42 @@ void KeywordCB(const std_msgs::String::ConstPtr & msg)
         if(nLenOfKW > 0)
         {
             FILE* python_exec = popen("python3 /home/robot/catkin_ws/src/wpb_home_apps/src/ImageRecognition/sdk_ImageRecognition.py", "r");
-            char keyword[1024]; //设置一个合适的长度，以存储每一行输出
-            fgets(keyword, sizeof(keyword), python_exec);
-            // 发现物品（航点）关键词
+            char keyword[1024], bash_output[1024]; //设置一个合适的长度，以存储每一行输出
+
+            ifstream in("/home/robot/team104_temp/IR_res.txt");
+            if (in.is_open() && !in.eof())
+                in >> keyword;
+            in.close();
             string objectName(keyword);
-            ROS_WARN("[[[%s]]]", objectName.c_str());
+            arKeyword.push_back(objectName);
+
+            fgets(bash_output, sizeof(bash_output), python_exec);
+            cout << bash_output;
+            
+            // 发现物品（航点）关键词
+            
+            ROS_WARN("[[[%s]]]", keyword);
             if (objectName != "Fruit" && objectName != "Bottle")
             {
-	            string strSpeak = "Unexpected object or error, try again, please"; 
-	            Speak(strSpeak);
+            	failCount ++;
+            	if (failCount <= 1)
+            	{
+            		string strSpeak = "Unexpected object, try again, please"; 
+	            	Speak(strSpeak);
+            	} else 
+            	{
+            		string strSpeak = "Unexpected object and tried for two times. Memoried as Unknown."; 
+	            	Speak(strSpeak);
+	            	AddNewWaypoint("Unknown");
+	            	failCount = 0;
+            	}
+	            
             } else
             {
-		    AddNewWaypoint(objectName);
+		    	AddNewWaypoint(objectName);
 	            string strSpeak = objectName + " . OK. I have memoried. Next one , please"; 
 	            Speak(strSpeak);
+	            failCount = 0;
             }
         }
 
@@ -337,12 +358,12 @@ int main(int argc, char** argv)
 
     ROS_WARN("[main] wpb_home_shopping");
     ros::Rate r(30);
+    ifstream in("/home/robot/team104_temp/status.txt");
     while(ros::ok())
     {
         if (nState == STATE_WAIT)
         {
             int count = 0;
-            ifstream in("/home/robot/team104_temp/status.txt");
             if (in.is_open())
             { 
                 if (!in.eof())

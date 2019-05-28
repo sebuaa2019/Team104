@@ -16,24 +16,7 @@ int main(int argc, char** argv)
     while(ros::ok() && times)
     {
         geometry_msgs::Twist vel_cmd;
-        vel_cmd.linear.x = 0;
-        vel_cmd.linear.y = 0;
-        vel_cmd.linear.z = 0;
-        
-        vel_cmd.angular.x = 0;
-        vel_cmd.angular.y = 0;
-        vel_cmd.angular.z = 0.1;
-
-        vel_pub.publish(vel_cmd);
-         times--;
-        ros::spinOnce();
-    }
-
-    times = time_stop; 
-    while(ros::ok() && times)
-    {
-        geometry_msgs::Twist vel_cmd;
-        vel_cmd.linear.x = 0;
+        vel_cmd.linear.x = 0.1;
         vel_cmd.linear.y = 0;
         vel_cmd.linear.z = 0;
         

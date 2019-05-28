@@ -196,4 +196,52 @@ include_directories(
 # endif()
 
 ## Add folders to be run by python nosetests
-# catkin_add_nosetests(test)
+# catkin_add_nosetests(test)
+
+add_executable(vel_left
+  src/vel_left.cpp
+)
+add_dependencies(vel_left ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(vel_left
+  ${catkin_LIBRARIES}
+)
+
+add_executable(vel_forward
+  src/vel_forward.cpp
+)
+add_dependencies(vel_forward ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(vel_forward
+  ${catkin_LIBRARIES}
+)
+
+add_executable(vel_turnleft
+  src/vel_turnleft.cpp
+)
+add_dependencies(vel_turnleft ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(vel_turnleft
+  ${catkin_LIBRARIES}
+)
+
+add_executable(vel_turnright
+  src/vel_turnright.cpp
+)
+add_dependencies(vel_turnright ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(vel_turnright
+  ${catkin_LIBRARIES}
+)
+
+add_executable(vel_backward
+  src/vel_backward.cpp
+)
+add_dependencies(vel_backward ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(vel_backward
+  ${catkin_LIBRARIES}
+)
+
+add_executable(vel_right
+  src/vel_right.cpp
+)
+add_dependencies(vel_right ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(vel_right
+  ${catkin_LIBRARIES}
+)

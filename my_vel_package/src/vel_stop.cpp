@@ -2,8 +2,13 @@
 #include <stdlib.h>
 #include <geometry_msgs/Twist.h>
 
+<<<<<<< HEAD:my_vel_package/src/vel_stop.cpp
 #define time_start 1000000
 #define time_stop 1000000
+=======
+#define time_start 500000
+#define time_stop 500000
+>>>>>>> parent of e5af4dad... updata package & create package2/vel_stop.cpp:my_vel_package/src/vel_forward.cpp
 
 using namespace std;
 int times;
@@ -13,6 +18,33 @@ int main(int argc, char** argv)
     ros::NodeHandle n;
     ros::Publisher vel_pub = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
     times = time_start; 
+    while(ros::ok() && times)
+    {
+        geometry_msgs::Twist vel_cmd;
+<<<<<<< HEAD:my_vel_package/src/vel_stop.cpp
+        vel_cmd.linear.x = 0;
+=======
+        vel_cmd.linear.x = 0.1;
+>>>>>>> parent of e5af4dad... updata package & create package2/vel_stop.cpp:my_vel_package/src/vel_forward.cpp
+        vel_cmd.linear.y = 0;
+        vel_cmd.linear.z = 0;
+        
+        vel_cmd.angular.x = 0;
+        vel_cmd.angular.y = 0;
+        vel_cmd.angular.z = 0;
+
+        vel_pub.publish(vel_cmd);
+         times--;
+<<<<<<< HEAD:my_vel_package/src/vel_stop.cpp
+        ros::spinOnce();
+    }
+return 0;
+}
+=======
+        ros::spinOnce();
+    }
+
+    times = time_stop; 
     while(ros::ok() && times)
     {
         geometry_msgs::Twist vel_cmd;
@@ -30,3 +62,4 @@ int main(int argc, char** argv)
     }
 return 0;
 }
+>>>>>>> parent of e5af4dad... updata package & create package2/vel_stop.cpp:my_vel_package/src/vel_forward.cpp

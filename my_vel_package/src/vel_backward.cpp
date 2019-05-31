@@ -2,8 +2,13 @@
 #include <stdlib.h>
 #include <geometry_msgs/Twist.h>
 
+<<<<<<< HEAD
 #define time_start 1500000
 #define time_stop 1500000
+=======
+#define time_start 500000
+#define time_stop 500000
+>>>>>>> parent of e5af4dad... updata package & create package2/vel_stop.cpp
 using namespace std;
 int times;
 int main(int argc, char** argv)
@@ -45,4 +50,8 @@ int main(int argc, char** argv)
         ros::spinOnce();
     }
 return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> parent of e5af4dad... updata package & create package2/vel_stop.cpp

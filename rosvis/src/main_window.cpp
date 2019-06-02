@@ -34,10 +34,10 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
 	: QMainWindow(parent)
 {
     ui.setupUi(this); // Calling this incidentally connects all ui's triggers to on_...() callbacks in this class.
-    builder = new QProcess();
+    /*builder = new QProcess();
     connect(builder, SIGNAL(readyReadStandardOutput()), this, SLOT(readOutput()));
     connect(builder, SIGNAL(readyReadStandardError()), this, SLOT(readOutput()));
-    builder->start("bash", QStringList() << "-c" << "roslaunch wpb_home_apps shopping.launch");
+    builder->start("bash", QStringList() << "-c" << "roslaunch wpb_home_apps shopping.launch");*/
 }
 
 MainWindow::~MainWindow() {}
@@ -51,7 +51,7 @@ void MainWindow::on_adminButton_clicked()
 {
 	RobotControl robotControl;
         robotControl.setModal(true);
-	QString path= "/home/robot/team104_temp/";
+  QString path= "/home/robot/team104_temp/";
 	QDir dir;
   	QFile file(path + "status.txt");
 	if(!dir.exists(path))

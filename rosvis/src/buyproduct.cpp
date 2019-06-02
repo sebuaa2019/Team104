@@ -19,7 +19,7 @@ BuyProduct::~BuyProduct()
 
 void BuyProduct::on_takeButton_clicked()
 {
-  QString path= "/home/robot/team104_temp/";
+  QString path= "/home/javiera/team104_temp/";
 	QDir dir;
   	QFile file(path + "status.txt");
 	if(!dir.exists(path))

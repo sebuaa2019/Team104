@@ -13,7 +13,7 @@ RobotControl::RobotControl(QWidget *parent) :
 {
   ui->setupUi(this);
 
-  QPixmap mapPic ("/home/robot/team104_temp/image.png");
+  QPixmap mapPic ("/home/robot/team104_temp/image.bmp");
   ui->pic->setPixmap(mapPic);
   QTimer *timer = new QTimer(this);
   QObject::connect(timer, SIGNAL(timeout()), this, SLOT(updatePic()));
@@ -47,7 +47,7 @@ void RobotControl::disableButton()
 
 void RobotControl::updatePic()
 {
-  QPixmap mapPic ("/home/robot/team104_temp/image.png");
+  QPixmap mapPic ("/home/robot/team104_temp/image.bmp");
   ui->pic->setPixmap(mapPic);
   ui->pic->repaint();
 }

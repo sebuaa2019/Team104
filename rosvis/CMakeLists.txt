@@ -10,15 +10,44 @@ project(rosvis)
 ##############################################################################
 
 # qt_build provides the qt cmake glue, roscpp the comms for a default talker
-find_package(catkin REQUIRED COMPONENTS qt_build roscpp rospy)
+find_package(catkin REQUIRED COMPONENTS qt_build
+  roscpp rospy std_msgs
+  pcl_conversions pcl_ros
+  cv_bridge image_transport tf
+  sensor_msgs geometry_msgs std_msgs visualization_msgs
+  image_geometry message_generation
+  move_base_msgs actionlib
+  wpb_home_bringup wpb_home_tutorials wpb_home_behaviors
+  xfyun_waterplus waterplus_map_tools
+)
 
-include_directories(${catkin_INCLUDE_DIRS})
+find_package(PCL REQUIRED)
+find_package(OpenCV REQUIRED)
+
+include_directories(
+  include ${catkin_INCLUDE_DIRS}
+  ${catkin_INCLUDE_DIRS}
+  include
+)
 link_directories(${catkin_LIBRARY_DIRS})
 # Use this to define what the package will export (e.g. libs, headers).
 # Since the default here is to produce only a binary, we don't worry about
-# exporting anything. 
-catkin_package()
+# exporting anything.
+catkin_package(
+  INCLUDE_DIRS include
+#  LIBRARIES wpb_home_apps
+  CATKIN_DEPENDS message_runtime
+#  DEPENDS system_lib
+)
 
+include_directories(include ${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+  PATTERN ".svn" EXCLUDE
+)
 ##############################################################################
 # Qt Environment
 ##############################################################################
@@ -49,7 +78,11 @@ file(GLOB_RECURSE QT_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} FOLLOW_SYMLINK
 # Binaries
 ##############################################################################
 
-add_executable(rosvis ${QT_SOURCES} ${QT_RESOURCES_CPP} ${QT_FORMS_HPP} ${QT_MOC_HPP})
+add_executable(rosvis ${QT_SOURCES} ${QT_RESOURCES_CPP} src/main.cpp ${QT_FORMS_HPP} ${QT_MOC_HPP})
+add_dependencies(rosvis ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(rosvis ${QT_LIBRARIES} ${catkin_LIBRARIES})
 install(TARGETS rosvis RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
+#add_executable(shopping ${QT_SOURCES} ${QT_RESOURCES_CPP} src/main.cpp ${QT_FORMS_HPP} ${QT_MOC_HPP})
+#add_dependencies(shopping ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+#target_link_libraries(shopping ${QT_LIBRARIES} ${catkin_LIBRARIES})

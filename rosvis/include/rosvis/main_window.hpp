@@ -37,12 +37,12 @@ public:
 
 public Q_SLOTS:
 	void on_adminButton_clicked();
-  	void on_userButton_clicked();
-	void readOutput();
+    void on_userButton_clicked();
+  void readOutput();
 
 private:
-	Ui::MainWindowDesign ui;
-	QProcess *builder;
+  Ui::MainWindowDesign ui;
+  QProcess *builder;
 };
 
 }  // namespace rosvis

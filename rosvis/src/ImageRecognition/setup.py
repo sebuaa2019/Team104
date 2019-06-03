@@ -26,5 +26,5 @@ setup(
     url='https://github.com/tencentyun/image-python-sdk-v2.0',
     description='Python 2/3 SDK for tencent qcloud image',
     license='MIT',
-    packages=find_packages()
+    packages=find_packages(), install_requires=['Pillow']
     )

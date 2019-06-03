@@ -14,3 +14,9 @@ wpb_home_apps/src/ImageRecognition/qcloud_image/__pycache__/
 new/
 
 wpb_home_apps/src/ImageRecognition/\.idea/
+
+rosvis/src/UnitTest/__pycache__/
+
+rosvis/src/ImageRecognition/\.idea/
+
+rosvis/src/ImageRecognition/qcloud_image/__pycache__/

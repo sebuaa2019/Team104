@@ -360,12 +360,12 @@ int main(int argc, char** argv)
 
     ROS_WARN("[main] wpb_home_shopping");
     ros::Rate r(30);
-    ifstream in("/home/robot/team104_temp/status.txt");
     while(ros::ok())
     {
         if (nState == STATE_WAIT)
         {
             int count = 0;
+            ifstream in("/home/robot/team104_temp/status.txt");
             if (in.is_open())
             { 
                 if (!in.eof())

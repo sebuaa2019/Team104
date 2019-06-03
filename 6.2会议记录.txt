@@ -1,0 +1,35 @@
+##### 6.2 
+
+**Team 104**
+
+出席：刘逸，马力，于金泽，周美廷
+
+交流测试进展
+
+###### 测试进展
+
+- 文档：进度基本正常
+
+  于金泽，刘逸：
+1. 关键词查询 FindKeyword+
+2. 航点保存 AddNewWaypoint
+3. 语音说话 Speak
+4. 抓取 GrabSwitch GrabResultCallback 
+5. 递给 PassSwitch PassResultCallback
+6. Yu 语音识别 KeywordCB
+7. Yu 图片获取 ProcColorCB
+8. 状态转换 main(FSM)+
+9. Yu 图片识别API测试
+10. Yu 图片识别结果与可靠性测试
+11. GUI、运动控制接口
+12. GUI、FSM接口
+13. FSM和图像识别接口
+14. 运动控制测试+
+
+- 代码：进度基本正常
+
+  周美廷：
+1. shopping.cpp == main.cpp
+2. 在main.cpp我加了一个函数调用来调用GUI的函数，所以不需要分开跑了
+3. 执行命令现在变为 roslaunch rosvis rosvis.launch，这已经可以执行shopping和gui了
+4. rviz关掉
